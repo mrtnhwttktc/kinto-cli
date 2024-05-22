@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log/slog"
 	"os"
+	"path/filepath"
 
 	"github.com/spf13/viper"
 )
@@ -17,46 +18,50 @@ func initDefault() {
 func init() {
 	slog.Info("Initializing config")
 	viper.GetViper()
-	viper.SetEnvPrefix("KTCLI_")
-	viper.AutomaticEnv() // read in environment variables that match
-
 	// set the defaults
 	initDefault()
+	viper.SetEnvPrefix("KTCLI_")
+	viper.AutomaticEnv() // read in environment variables that match
 
 	// Find home directory.
 	home, err := os.UserHomeDir()
 	if err != nil {
+		slog.Error("Error getting home directory, please check if the $HOME variable is set. Using the default config.", slog.String("error", err.Error()))
 		return
 	}
-	viper.AddConfigPath(home + "/.config/ktcli")
+
+	configDir := filepath.Join(home, ".config", "ktcli")
+
+	viper.AddConfigPath(configDir)
 	viper.SetConfigType("yaml")
 	viper.SetConfigName("config")
 
 	// If a config file is found, read it in, else create a new one
-	if err := viper.ReadInConfig(); err == nil {
-		slog.Info(fmt.Sprintf("Using config file: %s", viper.ConfigFileUsed()))
-	} else {
-		writeNewConfigFile()
+	if err := viper.ReadInConfig(); err != nil {
+		slog.Info("No config file found, creating a new one.")
+		err := writeNewConfigFile()
+		if err != nil {
+			slog.Error("Error creating a new config file.", slog.String("error", err.Error()))
+		}
+		return
 	}
+	slog.Info(fmt.Sprintf("Using config file: %s", viper.ConfigFileUsed()))
 }
 
-// writeNewConfigFile creates a new config file in the ~/.config/ktcli folder with the default values
+// writeNewConfigFile creates a new config file in the $HOME/.config/ktcli folder with the default values
 func writeNewConfigFile() error {
 	home, err := os.UserHomeDir()
 	if err != nil {
+		slog.Error("Error getting home directory, please check if the $HOME variable is set. Using the default config.", slog.String("error", err.Error()))
 		return err
 	}
-	slog.Warn("No config file found, creating a new one.")
-	if _, err := os.Stat(home + "/.config"); os.IsNotExist(err) {
-		err := os.Mkdir(home+"/.config", 0755)
-		if err != nil {
-			return err
-		}
-	}
 
-	if _, err := os.Stat(home + "/.config/ktcli"); os.IsNotExist(err) {
-		err := os.Mkdir(home+"/.config/ktcli", 0755)
+	configDir := filepath.Join(home, ".config", "ktcli")
+
+	if _, err := os.Stat(configDir); os.IsNotExist(err) {
+		err := os.MkdirAll(home+"/.config/ktcli", 0755)
 		if err != nil {
+			slog.Error("Error creating the config directory.", slog.String("error", err.Error()))
 			return err
 		}
 	}
@@ -68,10 +73,8 @@ func writeNewConfigFile() error {
 
 func SaveToConfig(key string, value string) error {
 	viper.Set(key, value)
-	// check if the config file exists
-	// if not, create it with writeNewConfigFile
-	// if it fails, return an error
 	if err := viper.WriteConfig(); err != nil {
+		slog.Error("Error writing to config file.", slog.String("error", err.Error()))
 		return err
 	}
 	return nil
