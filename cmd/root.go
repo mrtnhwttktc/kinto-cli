@@ -1,31 +1,34 @@
-/*
-Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
+	"log/slog"
 	"os"
 
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
+	ktcliLogger "github.com/mrtnhwttktc/kinto-cli/internal/logger"
 	v "github.com/mrtnhwttktc/kinto-cli/internal/version"
 	"github.com/spf13/cobra"
 )
 
-var version = v.Version
-
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:     "ktcli",
-	Version: version,
+	Version: v.Version,
 	Short:   localizer.Lang.Translate("CLI for Kinto scripts and tools."),
 	Long:    localizer.Lang.Translate(`Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.`),
-
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		debug, _ := cmd.Flags().GetBool("debug")
+		verbose, _ := cmd.Flags().GetBool("verbose")
+		if verbose {
+			ktcliLogger.VerboseLogger()
+			slog.Info("Verbose mode enabled.")
+		}
+		if debug {
+			ktcliLogger.LogLevel.Set(slog.LevelDebug)
+			slog.Info("Log level set to debug.")
+		}
+	},
 }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
 	err := rootCmd.Execute()
 	if err != nil {
@@ -36,11 +39,4 @@ func Execute() {
 func init() {
 	rootCmd.PersistentFlags().Bool("debug", false, localizer.Lang.Translate("Sets the log level to debug."))
 	rootCmd.PersistentFlags().Bool("verbose", false, localizer.Lang.Translate("Prints logs to stdout."))
-
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
 }
