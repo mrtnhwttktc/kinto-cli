@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"os"
 
+	v "github.com/mrtnhwttktc/kinto-cli/internal/version"
 	lumberjack "gopkg.in/natefinch/lumberjack.v2"
 )
 
@@ -21,6 +22,7 @@ func init() {
 
 	handler := slog.NewJSONHandler(rotatingLogger, opts)
 	logger := slog.New(handler)
+	logger = setDefaultKeys(logger)
 	slog.SetDefault(logger)
 }
 
@@ -34,15 +36,29 @@ func getLumberjackConfig() *lumberjack.Logger {
 	}
 }
 
-// VerboseLogger will set the logger to verbose mode, printing to stdout and a rotating file. The log level will be set to the level specified in the config file or the level set in the flags.
+// VerboseLogger configures the logger to operate in verbose mode.
+// In this mode, log messages are outputted to both stdout and a rotating file.
+// The log level is determined by the configuration file or the level set in the flags. Defalut is INFO.
+// Additionally, the source of each log message is included in the log entry.
 func VerboseLogger() {
 	rotatingLogger := getLumberjackConfig()
 
 	opts := &slog.HandlerOptions{
-		Level: LogLevel,
+		Level:     LogLevel,
+		AddSource: true,
 	}
 
 	multiWriter := io.MultiWriter(os.Stdout, rotatingLogger)
 	handler := slog.NewJSONHandler(multiWriter, opts)
-	slog.SetDefault(slog.New(handler))
+	logger := slog.New(handler)
+	logger = setDefaultKeys(logger)
+	slog.SetDefault(logger)
+}
+
+func setDefaultKeys(logger *slog.Logger) *slog.Logger {
+	defaultKeys := slog.Group(
+		"info", // group name
+		slog.String("version", v.Version),
+	)
+	return logger.With(defaultKeys)
 }
