@@ -1,0 +1,58 @@
+{
+    "language": "en-GB",
+    "messages": [
+        {
+            "id": "Select the language to use",
+            "message": "Select the language to use",
+            "translation": "Select the language to use",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "You selected: {Result}",
+            "message": "You selected: {Result}",
+            "translation": "You selected: {Result}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Result",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "result"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "CLI for Kinto scripts and tools.",
+            "message": "CLI for Kinto scripts and tools.",
+            "translation": "CLI for Kinto scripts and tools.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
+            "message": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
+            "translation": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Sets the log level to debug.",
+            "message": "Sets the log level to debug.",
+            "translation": "Sets the log level to debug.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Prints logs to stdout.",
+            "message": "Prints logs to stdout.",
+            "translation": "Prints logs to stdout.",
+            "comment": "Here you will define your flags and configuration settings.\nCobra supports persistent flags, which, if defined here,\nwill be global for your application.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        }
+    ]
+}
