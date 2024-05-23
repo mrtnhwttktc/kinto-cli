@@ -1,8 +1,8 @@
 package localizer
 
 import (
+	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	_ "github.com/mrtnhwttktc/kinto-cli/internal/translations"
-	"github.com/spf13/viper"
 
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
@@ -28,17 +28,25 @@ var locales = []Localizer{
 }
 
 // Lang exposes the initialized Localizer, defaulting to english if no language is set
-var Lang Localizer = SetLocalizer()
+var localizer *Localizer
 
-// SetLocalizer sets the language of the Localizer
-func SetLocalizer() Localizer {
-	configLang := viper.GetString("language")
+// GetLocalizer returns the Localizer using the singleton pattern
+// If the localizer is not set, it will set it to the language set in the configuration or default to english
+// before returning it
+func GetLocalizer() *Localizer {
+	if localizer != nil {
+		return localizer
+	}
+	conf := config.GetConfig()
+	configLang := conf.GetString("language")
 	for _, locale := range locales {
 		if configLang == locale.Language {
-			return locale
+			localizer = &locale
+			return localizer
 		}
 	}
-	return Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
+	localizer = &Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
+	return localizer
 }
 
 // GetLangOptions returns a list of the available languages in english
@@ -51,23 +59,6 @@ func GetLangOptions() []string {
 }
 
 // Translate translates the string to the language set in the Localizer
-func (l Localizer) Translate(key message.Reference, args ...interface{}) string {
+func (l *Localizer) Translate(key message.Reference, args ...interface{}) string {
 	return l.printer.Sprintf(key, args...)
 }
-
-// init reads the local configuration and initialize the Localizer
-// this init function needs to be called after the viper configuration is loaded in the config package
-// so that the language can be set correctly
-// func init() {
-// 	configLang := viper.GetString("language")
-// 	fmt.Println(configLang)
-// 	for _, locale := range locales {
-// 		if configLang == locale.Language {
-// 			Lang = locale
-// 		}
-// 	}
-// 	if Lang == (Localizer{}) {
-// 		Lang = Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
-// 	}
-
-// }
