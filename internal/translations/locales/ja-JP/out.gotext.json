@@ -2,6 +2,56 @@
     "language": "ja-JP",
     "messages": [
         {
+            "id": "CLI for Kinto scripts and tools.",
+            "message": "CLI for Kinto scripts and tools.",
+            "translation": "KintoのスクリプトとツールのCLI。"
+        },
+        {
+            "id": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
+            "message": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
+            "translation": "ktcliはKinto Technologiesの従業員のためのコマンドラインインターフェイスで\n当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。"
+        },
+        {
+            "id": "Sets the log level to debug.",
+            "message": "Sets the log level to debug.",
+            "translation": "ログレベルをデバッグに設定する。"
+        },
+        {
+            "id": "Prints logs to stdout.",
+            "message": "Prints logs to stdout.",
+            "translation": "標準出力にログを出力する。"
+        },
+        {
+            "id": "Prints the version of the CLI.",
+            "message": "Prints the version of the CLI.",
+            "translation": "CLIのバージョンを表示します。"
+        },
+        {
+            "id": "Prints the help message.",
+            "message": "Prints the help message.",
+            "translation": "helpメッセージを表示します。"
+        },
+        {
+            "id": "Set global configurations.",
+            "message": "Set global configurations.",
+            "translation": "グローバル設定を行います。"
+        },
+        {
+            "id": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
+            "message": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
+            "translation": "ktcliのグローバル構成を設定します。選択したオプションでローカル設定ファイルを更新します。"
+        },
+        {
+            "id": "Set the language to use for the CLI.",
+            "message": "Set the language to use for the CLI.",
+            "translation": "CLIで使用する言語を設定します。"
+        },
+        {
+            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "translation": "CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\n言語が指定されていない場合、CLIは言語を選択するように要求します。"
+        },
+        {
             "id": "Select the language to use",
             "message": "Select the language to use",
             "translation": "使用する言語を選択してください。"
@@ -22,25 +72,54 @@
             ]
         },
         {
-            "id": "CLI for Kinto scripts and tools.",
-            "message": "CLI for Kinto scripts and tools.",
-            "translation": "KintoのスクリプトとツールのCLI。"
+            "id": "help for {Name}",
+            "message": "help for {Name}",
+            "translation": "{Name}の使用方法についてのヘルプ",
+            "placeholders": [
+                {
+                    "id": "Name",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "cmd.Name()"
+                }
+            ]
         },
         {
-            "id": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
-            "message": "Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.",
-            "translation": "ktcliはKinto Technologiesの従業員のためのコマンドラインインターフェイスで、当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。"
+            "id": "Help about any command",
+            "message": "Help about any command",
+            "translation": "コマンドに関するヘルプ"
         },
         {
-            "id": "Sets the log level to debug.",
-            "message": "Sets the log level to debug.",
-            "translation": "ログレベルをデバッグに設定する。"
+            "id": "Help provides help for any command in the application.\nSimply type {Name} help [path to command] for full details.",
+            "message": "Help provides help for any command in the application.\nSimply type {Name} help [path to command] for full details.",
+            "translation": "ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\n{Name} help [コマンドへのパス]と入力するだけで、詳細が表示されます。",
+            "placeholders": [
+                {
+                    "id": "Name",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "c.Name()"
+                }
+            ]
         },
         {
-            "id": "Prints logs to stdout.",
-            "message": "Prints logs to stdout.",
-            "translation": "標準出力にログを出力する。",
-            "comment": "Here you will define your flags and configuration settings.\nCobra supports persistent flags, which, if defined here,\nwill be global for your application."
+            "id": "Unknown help topic {Args}",
+            "message": "Unknown help topic {Args}",
+            "translation": "不明なヘルプトピック {Args}",
+            "placeholders": [
+                {
+                    "id": "Args",
+                    "string": "%#[1]q",
+                    "type": "[]string",
+                    "underlyingType": "[]string",
+                    "argNum": 1,
+                    "expr": "args"
+                }
+            ]
         }
     ]
 }

@@ -1,9 +1,10 @@
-package cmd
+package cli
 
 import (
 	"log/slog"
 
-	"github.com/mrtnhwttktc/kinto-cli/cmd/set"
+	"github.com/mrtnhwttktc/kinto-cli/cmd/cli/set"
+	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
 	ktcliLogger "github.com/mrtnhwttktc/kinto-cli/internal/logger"
 	v "github.com/mrtnhwttktc/kinto-cli/internal/version"
@@ -31,15 +32,22 @@ func NewRootCmd() *cobra.Command {
 		},
 	}
 
+	// Disable the default completion command
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
+
 	bindFlags(rootCmd, l)
 
 	rootCmd.AddCommand(
 		set.NewSetCmd(),
 	)
+
+	utils.LocalizeHelpFunc(rootCmd, l)
 	return rootCmd
 }
 
 func bindFlags(cmd *cobra.Command, l *localizer.Localizer) {
 	cmd.PersistentFlags().Bool("debug", false, l.Translate("Sets the log level to debug."))
 	cmd.PersistentFlags().Bool("verbose", false, l.Translate("Prints logs to stdout."))
+	cmd.Flags().BoolP("version", "v", false, l.Translate("Prints the version of the CLI."))
+	cmd.Flags().BoolP("help", "h", false, l.Translate("Prints the help message."))
 }
