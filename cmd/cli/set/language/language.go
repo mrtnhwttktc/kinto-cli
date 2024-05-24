@@ -5,6 +5,7 @@ import (
 	"log/slog"
 
 	"github.com/manifoldco/promptui"
+	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
 	"github.com/spf13/cobra"
@@ -14,14 +15,14 @@ func NewLanguageCmd() *cobra.Command {
 	l := localizer.GetLocalizer()
 	languageCmd := &cobra.Command{
 		Use:   "language [english|japanese]",
-		Short: "A brief description of your command",
-		Long:  `Long description of your command.`,
+		Short: l.Translate("Set the language to use for the CLI."),
+		Long:  l.Translate("Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one."),
 		Example: `
 	# interactive mode
-	ktcli config language
+	ktcli set language
 
-	# args mode
-	ktcli config language english
+	# non-interactive mode
+	ktcli set language english
 	`,
 		Run: func(cmd *cobra.Command, args []string) {
 			langs := localizer.GetLangOptions()
@@ -44,5 +45,10 @@ func NewLanguageCmd() *cobra.Command {
 			}
 		},
 	}
+	bindFlags(languageCmd, l)
 	return languageCmd
+}
+
+func bindFlags(cmd *cobra.Command, l *localizer.Localizer) {
+	utils.LocalizeHelpFlag(cmd, l)
 }
