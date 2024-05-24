@@ -152,6 +152,76 @@
                 }
             ],
             "fuzzy": true
+        },
+        {
+            "id": "Usage:",
+            "message": "Usage:",
+            "translation": "Usage:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Aliases:",
+            "message": "Aliases:",
+            "translation": "Aliases:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Examples:",
+            "message": "Examples:",
+            "translation": "Examples:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Available Commands:",
+            "message": "Available Commands:",
+            "translation": "Available Commands:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Additional Commands:",
+            "message": "Additional Commands:",
+            "translation": "Additional Commands:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Flags:",
+            "message": "Flags:",
+            "translation": "Flags:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Global Flags:",
+            "message": "Global Flags:",
+            "translation": "Global Flags:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Additional help topics:",
+            "message": "Additional help topics:",
+            "translation": "Additional help topics:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Use",
+            "message": "Use",
+            "translation": "Use",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "for more information about a command.",
+            "message": "for more information about a command.",
+            "translation": "for more information about a command.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         }
     ]
 }

@@ -120,6 +120,56 @@
                     "expr": "args"
                 }
             ]
+        },
+        {
+            "id": "Usage:",
+            "message": "Usage:",
+            "translation": "使用方法:"
+        },
+        {
+            "id": "Aliases:",
+            "message": "Aliases:",
+            "translation": "エイリアス:"
+        },
+        {
+            "id": "Examples:",
+            "message": "Examples:",
+            "translation": "例:"
+        },
+        {
+            "id": "Available Commands:",
+            "message": "Available Commands:",
+            "translation": "利用可能なコマンド:"
+        },
+        {
+            "id": "Additional Commands:",
+            "message": "Additional Commands:",
+            "translation": "その他のコマンド:"
+        },
+        {
+            "id": "Flags:",
+            "message": "Flags:",
+            "translation": "フラッグ:"
+        },
+        {
+            "id": "Global Flags:",
+            "message": "Global Flags:",
+            "translation": "グローバルフラッグ:"
+        },
+        {
+            "id": "Additional help topics:",
+            "message": "Additional help topics:",
+            "translation": "その他のヘルプトピック:"
+        },
+        {
+            "id": "Use",
+            "message": "Use",
+            "translation": "コマンドの詳細については、"
+        },
+        {
+            "id": "for more information about a command.",
+            "message": "for more information about a command.",
+            "translation": " を使用して下さい。"
         }
     ]
 }

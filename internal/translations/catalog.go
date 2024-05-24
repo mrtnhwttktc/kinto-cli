@@ -39,7 +39,14 @@ func init() {
 }
 
 var messageKeyToIndex = map[string]int{
+	"Additional Commands:":             20,
+	"Additional help topics:":          23,
+	"Aliases:":                         17,
+	"Available Commands:":              19,
 	"CLI for Kinto scripts and tools.": 0,
+	"Examples:":                        18,
+	"Flags:":                           21,
+	"Global Flags:":                    22,
 	"Help about any command":           13,
 	"Help provides help for any command in the application.\nSimply type %s help [path to command] for full details.":                                                     14,
 	"Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.": 1,
@@ -51,21 +58,26 @@ var messageKeyToIndex = map[string]int{
 	"Set global configurations.":           6,
 	"Set the language to use for the CLI.": 8,
 	"Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.": 9,
-	"Sets the log level to debug.": 2,
-	"Unknown help topic %#q":       15,
-	"You selected: %s":             11,
-	"help for %s":                  12,
+	"Sets the log level to debug.":          2,
+	"Unknown help topic %#q":                15,
+	"Usage:":                                16,
+	"Use":                                   24,
+	"You selected: %s":                      11,
+	"for more information about a command.": 25,
+	"help for %s":                           12,
 }
 
-var en_GBIndex = []uint32{ // 17 elements
+var en_GBIndex = []uint32{ // 27 elements
 	0x00000000, 0x00000021, 0x000000c5, 0x000000e2,
 	0x000000f9, 0x00000118, 0x00000131, 0x0000014c,
 	0x000001b0, 0x000001d5, 0x0000027e, 0x00000299,
 	0x000002ad, 0x000002bc, 0x000002d3, 0x00000345,
-	0x0000035f,
-} // Size: 92 bytes
+	0x0000035f, 0x00000366, 0x0000036f, 0x00000379,
+	0x0000038d, 0x000003a2, 0x000003a9, 0x000003b7,
+	0x000003cf, 0x000003d3, 0x000003f9,
+} // Size: 132 bytes
 
-const en_GBData string = "" + // Size: 863 bytes
+const en_GBData string = "" + // Size: 1017 bytes
 	"\x02CLI for Kinto scripts and tools.\x02Kinto CLI or ktcli is a command " +
 	"line interface for employees at Kinto Technologies, allowing easy access" +
 	" to the multiple tools and scripts developped by our teams.\x02Sets the " +
@@ -78,17 +90,22 @@ const en_GBData string = "" + // Size: 863 bytes
 	"t you to select one.\x02Select the language to use\x02You selected: %[1]" +
 	"s\x02help for %[1]s\x02Help about any command\x02Help provides help for " +
 	"any command in the application.\x0aSimply type %[1]s help [path to comma" +
-	"nd] for full details.\x02Unknown help topic %#[1]q"
+	"nd] for full details.\x02Unknown help topic %#[1]q\x02Usage:\x02Aliases:" +
+	"\x02Examples:\x02Available Commands:\x02Additional Commands:\x02Flags:" +
+	"\x02Global Flags:\x02Additional help topics:\x02Use\x02for more informat" +
+	"ion about a command."
 
-var ja_JPIndex = []uint32{ // 17 elements
+var ja_JPIndex = []uint32{ // 27 elements
 	0x00000000, 0x0000002d, 0x00000109, 0x0000013a,
 	0x00000162, 0x0000018d, 0x000001b6, 0x000001de,
 	0x00000262, 0x00000290, 0x00000361, 0x00000392,
 	0x000003b0, 0x000003dd, 0x000003ff, 0x000004c6,
-	0x000004ec,
-} // Size: 92 bytes
+	0x000004ec, 0x000004fa, 0x0000050b, 0x00000510,
+	0x0000052d, 0x00000547, 0x00000555, 0x00000572,
+	0x00000595, 0x000005bd, 0x000005da,
+} // Size: 132 bytes
 
-const ja_JPData string = "" + // Size: 1260 bytes
+const ja_JPData string = "" + // Size: 1498 bytes
 	"\x02KintoのスクリプトとツールのCLI。\x02ktcliはKinto Technologiesの従業員のためのコマンドラインインターフ" +
 	"ェイスで\x0a当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。\x02ログレベルをデバッグに設定する。" +
 	"\x02標準出力にログを出力する。\x02CLIのバージョンを表示します。\x02helpメッセージを表示します。\x02グローバル設定を行いま" +
@@ -96,6 +113,8 @@ const ja_JPData string = "" + // Size: 1260 bytes
 	"します。\x02CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\x0a言語が指定されていない場合、CLIは言" +
 	"語を選択するように要求します。\x02使用する言語を選択してください。\x02%[1]sを選択しました。\x02%[1]sの使用方法について" +
 	"のヘルプ\x02コマンドに関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%[1]s he" +
-	"lp [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q"
+	"lp [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:\x02エイリアス:" +
+	"\x02例:\x02利用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その他のヘルプトピック:" +
+	"\x02コマンドの詳細については、\x02 を使用して下さい。"
 
-	// Total table size 2307 bytes (2KiB); checksum: 5AB23B93
+	// Total table size 2779 bytes (2KiB); checksum: 7D06E70E

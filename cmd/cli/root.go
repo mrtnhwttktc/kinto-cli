@@ -3,6 +3,7 @@ package cli
 import (
 	"log/slog"
 
+	cc "github.com/ivanpirog/coloredcobra"
 	"github.com/mrtnhwttktc/kinto-cli/cmd/cli/set"
 	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
@@ -41,7 +42,24 @@ func NewRootCmd() *cobra.Command {
 		set.NewSetCmd(),
 	)
 
+	// colorize the help output. Needs to be called before LocalizeUsageTemplate
+	cc.Init(&cc.Config{
+		RootCmd:         rootCmd,
+		Headings:        cc.HiCyan + cc.Bold,
+		Commands:        cc.HiYellow + cc.Bold,
+		CmdShortDescr:   cc.Blue,
+		Example:         cc.Italic,
+		ExecName:        cc.Bold,
+		Flags:           cc.Bold,
+		FlagsDescr:      cc.Blue,
+		FlagsDataType:   cc.Italic,
+		NoExtraNewlines: true,
+		NoBottomNewline: true,
+	})
+
 	utils.LocalizeHelpFunc(rootCmd, l)
+	utils.LocalizeUsageTemplate(rootCmd, l)
+
 	return rootCmd
 }
 
