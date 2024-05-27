@@ -5,6 +5,7 @@ import (
 	"log/slog"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/spf13/viper"
 )
@@ -24,7 +25,7 @@ func GetConfig() *viper.Viper {
 // initDefault sets the default values for the config
 func initializeDefault(conf *viper.Viper) {
 	conf.SetDefault("language", "japanese")
-	conf.SetDefault("log_level", "info")
+	conf.SetDefault("log-level", "info")
 }
 
 func initializeConfig(conf *viper.Viper) {
@@ -32,6 +33,9 @@ func initializeConfig(conf *viper.Viper) {
 	// set the defaults
 	initializeDefault(conf)
 	conf.SetEnvPrefix("KTCLI")
+	// Environment variables can't have dashes in them, so bind them to their equivalent
+	// keys with underscores, e.g. --favorite-color to KTCLI_FAVORITE_COLOR
+	conf.SetEnvKeyReplacer(strings.NewReplacer("-", "_"))
 	conf.AutomaticEnv() // read in environment variables that match
 
 	// Find home directory.
