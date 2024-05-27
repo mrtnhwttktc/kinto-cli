@@ -3,9 +3,9 @@ package language
 import (
 	"fmt"
 	"log/slog"
+	"os"
 
 	"github.com/manifoldco/promptui"
-	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
 	"github.com/spf13/cobra"
@@ -24,9 +24,34 @@ func NewLanguageCmd() *cobra.Command {
 	# non-interactive mode
 	ktcli set language english
 	`,
+		PreRun: func(cmd *cobra.Command, args []string) {
+			n, _ := cmd.Flags().GetBool("non-interactive")
+			if n && len(args) == 0 {
+				slog.Error("Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.")
+				fmt.Println(l.Translate("Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.\n"))
+				cmd.Help()
+				os.Exit(1)
+			}
+			if len(args) > 1 {
+				slog.Error("Too many arguments provided for set language command.")
+				fmt.Println(l.Translate("Too many arguments provided for set language command. Please select a language from the following: %v\n", localizer.GetLangOptions()))
+				cmd.Help()
+				os.Exit(1)
+			}
+		},
 		Run: func(cmd *cobra.Command, args []string) {
 			langs := localizer.GetLangOptions()
 			conf := config.GetConfig()
+			if len(args) == 1 {
+				fmt.Println(l.Translate("You selected: %s", args[0]))
+				err := config.SaveToConfig(conf, "language", args[0])
+				if err != nil {
+					slog.Error("Error saving language to config.", slog.String("error", err.Error()))
+					fmt.Println(l.Translate("Error saving language to config."))
+					os.Exit(1)
+				}
+				return
+			}
 
 			prompt := promptui.Select{
 				Label: l.Translate("Select the language to use"),
@@ -42,13 +67,14 @@ func NewLanguageCmd() *cobra.Command {
 			err = config.SaveToConfig(conf, "language", result)
 			if err != nil {
 				slog.Error("Error saving language to config.", slog.String("error", err.Error()))
+				fmt.Println(l.Translate("Error saving language to config."))
+				os.Exit(1)
 			}
 		},
 	}
-	bindFlags(languageCmd, l)
+	setFlags(languageCmd, l)
 	return languageCmd
 }
 
-func bindFlags(cmd *cobra.Command, l *localizer.Localizer) {
-	utils.LocalizeHelpFlag(cmd, l)
+func setFlags(cmd *cobra.Command, l *localizer.Localizer) {
 }
