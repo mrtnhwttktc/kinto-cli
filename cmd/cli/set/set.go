@@ -27,13 +27,15 @@ func NewSetCmd() *cobra.Command {
 		PreRun: func(cmd *cobra.Command, args []string) {
 			n, _ := cmd.Flags().GetBool("non-interactive")
 			if n {
-				slog.Error("Cannot use non-interactive mode with set command. A subcommand is required.")
-				fmt.Println(l.Translate("Cannot use non-interactive mode with set command. A subcommand is required.\n"))
+				out := cmd.OutOrStdout()
+				slog.Warn("Cannot use non-interactive mode with set command. A subcommand is required.")
+				fmt.Fprintln(out, l.Translate("Cannot use non-interactive mode with set command. A subcommand is required.\n"))
 				cmd.Help()
 				os.Exit(1)
 			}
 		},
 		Run: func(cmd *cobra.Command, args []string) {
+			out := cmd.OutOrStdout()
 			var subcommands = []string{}
 			for _, subcmd := range cmd.Commands() {
 				subcommands = append(subcommands, subcmd.Name())
@@ -47,7 +49,7 @@ func NewSetCmd() *cobra.Command {
 				slog.Error("Subcommand selection prompt failed", slog.String("error", err.Error()))
 				return
 			}
-			fmt.Println(l.Translate("You selected: %s", result))
+			fmt.Fprintln(out, l.Translate("Running subcommand %s", result))
 			for _, subcmd := range cmd.Commands() {
 				if subcmd.Name() == result {
 					subcmd.Run(cmd, []string{})

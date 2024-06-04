@@ -8,8 +8,8 @@ import (
 	"golang.org/x/text/message"
 )
 
-// Localizer is a struct that holds the printer and the ID of the language.
-// The ID is the plain text name of the language and the printer is the
+// Localizer is a struct that holds the printer and the language.
+// The Language is the plain text name of the language and the printer is the
 // message printer that will be used to translate the strings
 type Localizer struct {
 	printer  *message.Printer
@@ -30,9 +30,8 @@ var locales = []Localizer{
 // Lang exposes the initialized Localizer, defaulting to english if no language is set
 var localizer *Localizer
 
-// GetLocalizer returns the Localizer using the singleton pattern
+// GetLocalizer returns the Localizer using the singleton pattern.
 // If the localizer is not set, it will set it to the language set in the configuration or default to english
-// before returning it
 func GetLocalizer() *Localizer {
 	if localizer != nil {
 		return localizer

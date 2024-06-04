@@ -2,6 +2,7 @@ package cli
 
 import (
 	"fmt"
+	"io"
 	"log/slog"
 
 	cc "github.com/ivanpirog/coloredcobra"
@@ -10,7 +11,7 @@ import (
 	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
-	ktcliLogger "github.com/mrtnhwttktc/kinto-cli/internal/logger"
+	"github.com/mrtnhwttktc/kinto-cli/internal/logger"
 	v "github.com/mrtnhwttktc/kinto-cli/internal/version"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -28,19 +29,30 @@ func NewRootCmd() *cobra.Command {
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			// Bind the flags to the config, so that the config file and environment variables are used if the flag is not set
 			bindFlagsToEnvAndConfig(cmd, config.GetConfig())
+			// Set the log level
+			conf := config.GetConfig()
+			logger.SetLogLevel(conf.GetString("log-level"))
 
 			debug, _ := cmd.Flags().GetBool("debug")
-			verbose, err := cmd.Flags().GetBool("verbose")
-			if err != nil {
-				slog.Error("Error getting verbose flag.", slog.String("error", err.Error()))
+			verbose, _ := cmd.Flags().GetBool("verbose")
+			quiet, _ := cmd.Flags().GetBool("quiet")
+			no_version_check, _ := cmd.Flags().GetBool("no-version-check")
+			if !no_version_check {
+				if v.IsNewVersionAvailable() {
+					out := cmd.OutOrStdout()
+					fmt.Fprintf(out, "\033[35m%s\n%s:\033[0m \033[32msudo ktcli update\n\n\033[0m", l.Translate("A new version of the CLI is available. Please update to the latest version."), l.Translate("Use the update command to update"))
+				}
 			}
 			if verbose {
-				ktcliLogger.VerboseLogger()
+				logger.VerboseLogger()
 				slog.Info("Verbose mode enabled.")
 			}
 			if debug {
-				ktcliLogger.LogLevel.Set(slog.LevelDebug)
+				logger.LogLevel.Set(slog.LevelDebug)
 				slog.Info("Log level set to debug.")
+			}
+			if quiet {
+				cmd.SetOut(io.Discard)
 			}
 		},
 	}
@@ -83,9 +95,16 @@ func setFlags(cmd *cobra.Command, l *localizer.Localizer) {
 	cmd.PersistentFlags().BoolP("help", "h", false, l.Translate("help for %s", cmd.Name()))
 	cmd.PersistentFlags().Bool("debug", false, l.Translate("Sets the log level to debug."))
 	cmd.PersistentFlags().Bool("verbose", false, l.Translate("Prints logs to stdout."))
+	cmd.PersistentFlags().Bool("no-version-check", false, l.Translate("Disables the check for a new version of the CLI."))
 	cmd.PersistentFlags().BoolP("non-interactive", "n", false, l.Translate("Disables interactive mode."))
+	cmd.PersistentFlags().BoolP("quiet", "q", false, l.Translate("Disables all output except errors."))
+	cmd.PersistentFlags().StringP("log-level", "l", "info", l.Translate("Sets the log level. Options: debug, info, warn, error."))
 	// local flags
 	cmd.Flags().BoolP("version", "v", false, l.Translate("Prints the version of the CLI."))
+	// hide the debug, verbose and no-version-check flags from the help output
+	cmd.PersistentFlags().MarkHidden("debug")            // TODO: is this a good idea?
+	cmd.PersistentFlags().MarkHidden("verbose")          // TODO: is this a good idea?
+	cmd.PersistentFlags().MarkHidden("no-version-check") // TODO: is this a good idea?
 }
 
 // Bind each cobra flag to its associated viper configuration (config file and environment variable)

@@ -1,4 +1,4 @@
-package log
+package logger
 
 import (
 	"io"
@@ -12,8 +12,23 @@ import (
 // can be updated using the Set method, LogLevel.Set(slog.LevelDebug)
 var LogLevel = &slog.LevelVar{} // INFO
 
-// init initializes the logger with a rotating file handler.
-func init() {
+func SetLogLevel(loglevel string) {
+	switch loglevel {
+	case "debug":
+		LogLevel.Set(slog.LevelDebug)
+	case "info":
+		LogLevel.Set(slog.LevelInfo)
+	case "warn":
+		LogLevel.Set(slog.LevelWarn)
+	case "error":
+		LogLevel.Set(slog.LevelError)
+	default:
+		LogLevel.Set(slog.LevelInfo)
+	}
+}
+
+// SetDefaultLogger initializes the logger with a JSON handler and a rotating file handler.
+func SetDefaultLogger() {
 	rotatingLogger := getLumberjackConfig()
 
 	opts := &slog.HandlerOptions{
@@ -48,8 +63,9 @@ func VerboseLogger() {
 		AddSource: true,
 	}
 
-	multiWriter := io.MultiWriter(os.Stdout, rotatingLogger)
+	multiWriter := io.MultiWriter(os.Stderr, rotatingLogger)
 	handler := slog.NewJSONHandler(multiWriter, opts)
+
 	logger := slog.New(handler)
 	logger = setDefaultKeys(logger)
 	slog.SetDefault(logger)
@@ -57,7 +73,7 @@ func VerboseLogger() {
 
 func setDefaultKeys(logger *slog.Logger) *slog.Logger {
 	defaultKeys := slog.Group(
-		"info", // group name
+		"binary", // group name
 		slog.String("version", v.Version),
 	)
 	return logger.With(defaultKeys)
