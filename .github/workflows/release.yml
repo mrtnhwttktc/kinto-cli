@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22
+
+      # Run tests before building
+
+      - name: Extract version from tag
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV # Set the version as an environment variable, removing the 'v' prefix
+
+      - name: Build
+        run: go build -ldflags "-X version.Version=$VERSION -X version.binURL=${{ secrets.BIN_URL }}" -o ktcli # Build the binary with the version and binURL set
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.ROLE_ARN }}
+          aws-region: us-west-2
+
+      - name: Upload bin file to S3 latest
+        run: aws s3 cp ktcli ${{secrets.S3_URL}}/latest/ktcli
+
+      - name: Upload bin file to S3 versioned
+        run: aws s3 cp ktcli ${{secrets.S3_URL}}/v$VERSION/ktcli
+
+      - name: Refresh CloudFront Distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" # Invalidate the CloudFront distribution to refresh the cache

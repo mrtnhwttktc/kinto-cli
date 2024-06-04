@@ -16,83 +16,17 @@
             "fuzzy": true
         },
         {
-            "id": "Sets the log level to debug.",
-            "message": "Sets the log level to debug.",
-            "translation": "Sets the log level to debug.",
+            "id": "A new version of the CLI is available. Please update to the latest version.",
+            "message": "A new version of the CLI is available. Please update to the latest version.",
+            "translation": "A new version of the CLI is available. Please update to the latest version.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Prints logs to stdout.",
-            "message": "Prints logs to stdout.",
-            "translation": "Prints logs to stdout.",
+            "id": "Use the update command to update",
+            "message": "Use the update command to update",
+            "translation": "Use the update command to update",
             "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Prints the version of the CLI.",
-            "message": "Prints the version of the CLI.",
-            "translation": "Prints the version of the CLI.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Prints the help message.",
-            "message": "Prints the help message.",
-            "translation": "Prints the help message.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Set global configurations.",
-            "message": "Set global configurations.",
-            "translation": "Set global configurations.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
-            "message": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
-            "translation": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Set the language to use for the CLI.",
-            "message": "Set the language to use for the CLI.",
-            "translation": "Set the language to use for the CLI.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "translation": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Select the language to use",
-            "message": "Select the language to use",
-            "translation": "Select the language to use",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "You selected: {Result}",
-            "message": "You selected: {Result}",
-            "translation": "You selected: {Result}",
-            "translatorComment": "Copied from source.",
-            "placeholders": [
-                {
-                    "id": "Result",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "result"
-                }
-            ],
             "fuzzy": true
         },
         {
@@ -110,6 +44,284 @@
                     "expr": "cmd.Name()"
                 }
             ],
+            "fuzzy": true
+        },
+        {
+            "id": "Sets the log level to debug.",
+            "message": "Sets the log level to debug.",
+            "translation": "Sets the log level to debug.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Prints logs to stdout.",
+            "message": "Prints logs to stdout.",
+            "translation": "Prints logs to stdout.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Disables interactive mode.",
+            "message": "Disables interactive mode.",
+            "translation": "Disables interactive mode.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Disables all output except errors.",
+            "message": "Disables all output except errors.",
+            "translation": "Disables all output except errors.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Sets the log level. Options: debug, info, warn, error.",
+            "message": "Sets the log level. Options: debug, info, warn, error.",
+            "translation": "Sets the log level. Options: debug, info, warn, error.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Disables the check for a new version of the CLI.",
+            "message": "Disables the check for a new version of the CLI.",
+            "translation": "Disables the check for a new version of the CLI.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Prints the version of the CLI.",
+            "message": "Prints the version of the CLI.",
+            "translation": "Prints the version of the CLI.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Set global configurations.",
+            "message": "Set global configurations.",
+            "translation": "Set global configurations.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.",
+            "message": "Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.",
+            "translation": "Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Cannot use non-interactive mode with set command. A subcommand is required.",
+            "message": "Cannot use non-interactive mode with set command. A subcommand is required.",
+            "translation": "Cannot use non-interactive mode with set command. A subcommand is required.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select the configuration to set",
+            "message": "Select the configuration to set",
+            "translation": "Select the configuration to set",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Running subcommand {Result}",
+            "message": "Running subcommand {Result}",
+            "translation": "Running subcommand {Result}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Result",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "result"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Set the language to use for the CLI.",
+            "message": "Set the language to use for the CLI.",
+            "translation": "Set the language to use for the CLI.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "translation": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.",
+            "message": "Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.",
+            "translation": "Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Too many arguments provided for set language command. Please select a language from the following: {LangOptions}",
+            "message": "Too many arguments provided for set language command. Please select a language from the following: {LangOptions}",
+            "translation": "Too many arguments provided for set language command. Please select a language from the following: {LangOptions}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "LangOptions",
+                    "string": "%[1]v",
+                    "type": "[]string",
+                    "underlyingType": "[]string",
+                    "argNum": 1,
+                    "expr": "localizer.GetLangOptions()"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Invalid language {Args0} provided. Valid languages: {Langs}",
+            "message": "Invalid language {Args0} provided. Valid languages: {Langs}",
+            "translation": "Invalid language {Args0} provided. Valid languages: {Langs}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Args0",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "args[0]"
+                },
+                {
+                    "id": "Langs",
+                    "string": "%[2]v",
+                    "type": "[]string",
+                    "underlyingType": "[]string",
+                    "argNum": 2,
+                    "expr": "langs"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Please select a language.",
+            "message": "Please select a language.",
+            "translation": "Please select a language.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Select the language to use",
+            "message": "Select the language to use",
+            "translation": "Select the language to use",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "You selected: {Lang}",
+            "message": "You selected: {Lang}",
+            "translation": "You selected: {Lang}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Lang",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "lang"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Error saving language to config.",
+            "message": "Error saving language to config.",
+            "translation": "Error saving language to config.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Update the CLI to the latest version.",
+            "message": "Update the CLI to the latest version.",
+            "translation": "Update the CLI to the latest version.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.",
+            "message": "Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.",
+            "translation": "Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Please run this command with sudo.",
+            "message": "Please run this command with sudo.",
+            "translation": "Please run this command with sudo.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Failed to get binary path, please provide it using the --path flag.",
+            "message": "Failed to get binary path, please provide it using the --path flag.",
+            "translation": "Failed to get binary path, please provide it using the --path flag.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Binary path:",
+            "message": "Binary path:",
+            "translation": "Binary path:",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "BinaryPath",
+                    "string": "%[1]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "binaryPath"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Failed to evaluate symlink",
+            "message": "Failed to evaluate symlink",
+            "translation": "Failed to evaluate symlink",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Real path:",
+            "message": "Real path:",
+            "translation": "Real path:",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "RealPath",
+                    "string": "%[1]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "realPath"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
+            "message": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
+            "translation": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Path to the binary to update. Defaults to the current binary path.",
+            "message": "Path to the binary to update. Defaults to the current binary path.",
+            "translation": "Path to the binary to update. Defaults to the current binary path.",
+            "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {

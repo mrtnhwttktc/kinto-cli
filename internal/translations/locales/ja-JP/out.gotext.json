@@ -12,64 +12,14 @@
             "translation": "ktcliはKinto Technologiesの従業員のためのコマンドラインインターフェイスで\n当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。"
         },
         {
-            "id": "Sets the log level to debug.",
-            "message": "Sets the log level to debug.",
-            "translation": "ログレベルをデバッグに設定する。"
+            "id": "A new version of the CLI is available. Please update to the latest version.",
+            "message": "A new version of the CLI is available. Please update to the latest version.",
+            "translation": ""
         },
         {
-            "id": "Prints logs to stdout.",
-            "message": "Prints logs to stdout.",
-            "translation": "標準出力にログを出力する。"
-        },
-        {
-            "id": "Prints the version of the CLI.",
-            "message": "Prints the version of the CLI.",
-            "translation": "CLIのバージョンを表示します。"
-        },
-        {
-            "id": "Prints the help message.",
-            "message": "Prints the help message.",
-            "translation": "helpメッセージを表示します。"
-        },
-        {
-            "id": "Set global configurations.",
-            "message": "Set global configurations.",
-            "translation": "グローバル設定を行います。"
-        },
-        {
-            "id": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
-            "message": "Set global configurations for ktcli. Updates the local configuration file with the selected option.",
-            "translation": "ktcliのグローバル構成を設定します。選択したオプションでローカル設定ファイルを更新します。"
-        },
-        {
-            "id": "Set the language to use for the CLI.",
-            "message": "Set the language to use for the CLI.",
-            "translation": "CLIで使用する言語を設定します。"
-        },
-        {
-            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "translation": "CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\n言語が指定されていない場合、CLIは言語を選択するように要求します。"
-        },
-        {
-            "id": "Select the language to use",
-            "message": "Select the language to use",
-            "translation": "使用する言語を選択してください。"
-        },
-        {
-            "id": "You selected: {Result}",
-            "message": "You selected: {Result}",
-            "translation": "{Result}を選択しました。",
-            "placeholders": [
-                {
-                    "id": "Result",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "result"
-                }
-            ]
+            "id": "Use the update command to update",
+            "message": "Use the update command to update",
+            "translation": ""
         },
         {
             "id": "help for {Name}",
@@ -85,6 +35,224 @@
                     "expr": "cmd.Name()"
                 }
             ]
+        },
+        {
+            "id": "Sets the log level to debug.",
+            "message": "Sets the log level to debug.",
+            "translation": "ログレベルをデバッグに設定する。"
+        },
+        {
+            "id": "Prints logs to stdout.",
+            "message": "Prints logs to stdout.",
+            "translation": "標準出力にログを出力する。"
+        },
+        {
+            "id": "Disables interactive mode.",
+            "message": "Disables interactive mode.",
+            "translation": "対話モードを無効にする"
+        },
+        {
+            "id": "Disables all output except errors.",
+            "message": "Disables all output except errors.",
+            "translation": "エラー以外のすべての出力を無効にする。"
+        },
+        {
+            "id": "Sets the log level. Options: debug, info, warn, error.",
+            "message": "Sets the log level. Options: debug, info, warn, error.",
+            "translation": ""
+        },
+        {
+            "id": "Disables the check for a new version of the CLI.",
+            "message": "Disables the check for a new version of the CLI.",
+            "translation": ""
+        },
+        {
+            "id": "Prints the version of the CLI.",
+            "message": "Prints the version of the CLI.",
+            "translation": "CLIのバージョンを表示します。"
+        },
+        {
+            "id": "Set global configurations.",
+            "message": "Set global configurations.",
+            "translation": "グローバル設定を行います。"
+        },
+        {
+            "id": "Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.",
+            "message": "Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.",
+            "translation": "ktcli のグローバル構成を設定します。対話型モードでは、CLI は設定する構成を選択するように要求します。\n非対話モードでは、サブコマンドを指定する必要があります。"
+        },
+        {
+            "id": "Cannot use non-interactive mode with set command. A subcommand is required.",
+            "message": "Cannot use non-interactive mode with set command. A subcommand is required.",
+            "translation": "setコマンドで非インタラクティブ・モードは使えない。サブコマンドが必要。"
+        },
+        {
+            "id": "Select the configuration to set",
+            "message": "Select the configuration to set",
+            "translation": "設定する構成を選択してください"
+        },
+        {
+            "id": "Running subcommand {Result}",
+            "message": "Running subcommand {Result}",
+            "translation": "{Result} サブコマンドを実行します",
+            "placeholders": [
+                {
+                    "id": "Result",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "result"
+                }
+            ]
+        },
+        {
+            "id": "Set the language to use for the CLI.",
+            "message": "Set the language to use for the CLI.",
+            "translation": "CLIで使用する言語を設定します。"
+        },
+        {
+            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "translation": "CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\n言語が指定されていない場合、CLIは言語を選択するように要求します。"
+        },
+        {
+            "id": "Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.",
+            "message": "Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.",
+            "translation": "引数なしのset languageコマンドでは、非インタラクティブ・モードは使用できない。引数として言語を指定しなければならない。"
+        },
+        {
+            "id": "Too many arguments provided for set language command. Please select a language from the following: {LangOptions}",
+            "message": "Too many arguments provided for set language command. Please select a language from the following: {LangOptions}",
+            "translation": "set languageコマンドの引数が多すぎます。次の中から言語を選択してください: {LangOptions}。",
+            "placeholders": [
+                {
+                    "id": "LangOptions",
+                    "string": "%[1]v",
+                    "type": "[]string",
+                    "underlyingType": "[]string",
+                    "argNum": 1,
+                    "expr": "localizer.GetLangOptions()"
+                }
+            ]
+        },
+        {
+            "id": "Invalid language {Args0} provided. Valid languages: {Langs}",
+            "message": "Invalid language {Args0} provided. Valid languages: {Langs}",
+            "translation": "無効な言語 {Args0} が指定されました。有効な言語です： {Langs}。",
+            "placeholders": [
+                {
+                    "id": "Args0",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "args[0]"
+                },
+                {
+                    "id": "Langs",
+                    "string": "%[2]v",
+                    "type": "[]string",
+                    "underlyingType": "[]string",
+                    "argNum": 2,
+                    "expr": "langs"
+                }
+            ]
+        },
+        {
+            "id": "Please select a language.",
+            "message": "Please select a language.",
+            "translation": "言語を選択してください。"
+        },
+        {
+            "id": "Select the language to use",
+            "message": "Select the language to use",
+            "translation": "使用する言語を選択してください。"
+        },
+        {
+            "id": "You selected: {Lang}",
+            "message": "You selected: {Lang}",
+            "translation": "{Lang} を選択しました。",
+            "placeholders": [
+                {
+                    "id": "Lang",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "lang"
+                }
+            ]
+        },
+        {
+            "id": "Error saving language to config.",
+            "message": "Error saving language to config.",
+            "translation": "設定ファイルへの言語の保存中にエラーが発生しました。"
+        },
+        {
+            "id": "Update the CLI to the latest version.",
+            "message": "Update the CLI to the latest version.",
+            "translation": "CLIで使用する言語を設定します。"
+        },
+        {
+            "id": "Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.",
+            "message": "Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.",
+            "translation": "CLIを最新バージョンに更新します。このコマンドはCLIの最新バージョンを確認し、必要に応じて更新します。"
+        },
+        {
+            "id": "Please run this command with sudo.",
+            "message": "Please run this command with sudo.",
+            "translation": "sudoでこのコマンドを実行してください。"
+        },
+        {
+            "id": "Failed to get binary path, please provide it using the --path flag.",
+            "message": "Failed to get binary path, please provide it using the --path flag.",
+            "translation": ""
+        },
+        {
+            "id": "Binary path:",
+            "message": "Binary path:",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "BinaryPath",
+                    "string": "%[1]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "binaryPath"
+                }
+            ]
+        },
+        {
+            "id": "Failed to evaluate symlink",
+            "message": "Failed to evaluate symlink",
+            "translation": ""
+        },
+        {
+            "id": "Real path:",
+            "message": "Real path:",
+            "translation": "",
+            "placeholders": [
+                {
+                    "id": "RealPath",
+                    "string": "%[1]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "realPath"
+                }
+            ]
+        },
+        {
+            "id": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
+            "message": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
+            "translation": ""
+        },
+        {
+            "id": "Path to the binary to update. Defaults to the current binary path.",
+            "message": "Path to the binary to update. Defaults to the current binary path.",
+            "translation": "更新するバイナリへのパス。デフォルトは現在のバイナリ・パスです。"
         },
         {
             "id": "Help about any command",
