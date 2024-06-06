@@ -44,3 +44,11 @@ func LocalizeUsageTemplate(c *cobra.Command, l *localizer.Localizer) {
 	).Replace(tpl)
 	c.SetUsageTemplate(tpl)
 }
+
+func LocalizeVersionTemplate(c *cobra.Command, l *localizer.Localizer) {
+	tpl := c.VersionTemplate()
+	tpl = strings.NewReplacer(
+		"version", l.Translate("version"),
+	).Replace(tpl)
+	c.SetVersionTemplate(tpl)
+}
