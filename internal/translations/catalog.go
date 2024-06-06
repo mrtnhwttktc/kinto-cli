@@ -49,9 +49,9 @@ var messageKeyToIndex = map[string]int{
 	"CLI for Kinto scripts and tools.": 0,
 	"Cannot use non-interactive mode with set command. A subcommand is required.\n":                                             14,
 	"Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.\n": 19,
-	"Disables all output except errors.":                                  8,
-	"Disables interactive mode.":                                          7,
-	"Disables the check for a new version of the CLI.":                    10,
+	"Disables all output except errors.":                                  9,
+	"Disables interactive mode.":                                          8,
+	"Disables the check for a new version of the CLI.":                    7,
 	"Error saving language to config.":                                    25,
 	"Examples:":                                                           40,
 	"Failed to evaluate symlink":                                          31,
@@ -76,7 +76,7 @@ var messageKeyToIndex = map[string]int{
 	"Set the language to use for the CLI.": 17,
 	"Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.": 18,
 	"Sets the log level to debug.":                           5,
-	"Sets the log level. Options: debug, info, warn, error.": 9,
+	"Sets the log level. Options: debug, info, warn, error.": 10,
 	"Too many arguments provided for set language command. Please select a language from the following: %v\n": 20,
 	"Unknown help topic %#q":                37,
 	"Update the CLI to the latest version.": 26,
@@ -87,13 +87,14 @@ var messageKeyToIndex = map[string]int{
 	"You selected: %s":                      24,
 	"for more information about a command.": 47,
 	"help for %s":                           4,
+	"version":                               48,
 }
 
-var en_GBIndex = []uint32{ // 49 elements
+var en_GBIndex = []uint32{ // 50 elements
 	// Entry 0 - 1F
 	0x00000000, 0x00000021, 0x000000c5, 0x00000111,
 	0x00000132, 0x00000141, 0x0000015e, 0x00000175,
-	0x00000190, 0x000001b3, 0x000001ea, 0x0000021b,
+	0x000001a6, 0x000001c1, 0x000001e4, 0x0000021b,
 	0x0000023a, 0x00000255, 0x00000340, 0x00000391,
 	0x000003b1, 0x000003ca, 0x000003ef, 0x00000498,
 	0x00000515, 0x00000583, 0x000005c0, 0x000005da,
@@ -104,18 +105,18 @@ var en_GBIndex = []uint32{ // 49 elements
 	0x00000817, 0x00000889, 0x000008a3, 0x000008aa,
 	0x000008b3, 0x000008bd, 0x000008d1, 0x000008e6,
 	0x000008ed, 0x000008fb, 0x00000913, 0x00000917,
-	0x0000093d,
-} // Size: 220 bytes
+	0x0000093d, 0x00000945,
+} // Size: 224 bytes
 
-const en_GBData string = "" + // Size: 2365 bytes
+const en_GBData string = "" + // Size: 2373 bytes
 	"\x02CLI for Kinto scripts and tools.\x02Kinto CLI or ktcli is a command " +
 	"line interface for employees at Kinto Technologies, allowing easy access" +
 	" to the multiple tools and scripts developped by our teams.\x02A new ver" +
 	"sion of the CLI is available. Please update to the latest version.\x02Us" +
 	"e the update command to update\x02help for %[1]s\x02Sets the log level t" +
-	"o debug.\x02Prints logs to stdout.\x02Disables interactive mode.\x02Disa" +
-	"bles all output except errors.\x02Sets the log level. Options: debug, in" +
-	"fo, warn, error.\x02Disables the check for a new version of the CLI.\x02" +
+	"o debug.\x02Prints logs to stdout.\x02Disables the check for a new versi" +
+	"on of the CLI.\x02Disables interactive mode.\x02Disables all output exce" +
+	"pt errors.\x02Sets the log level. Options: debug, info, warn, error.\x02" +
 	"Prints the version of the CLI.\x02Set global configurations.\x02Set glob" +
 	"al configurations for ktcli. Updates the local configuration file with t" +
 	"he selected option.\x0aIn interactive mode, the CLI will prompt you to s" +
@@ -143,44 +144,48 @@ const en_GBData string = "" + // Size: 2365 bytes
 	"e %[1]s help [path to command] for full details.\x02Unknown help topic %" +
 	"#[1]q\x02Usage:\x02Aliases:\x02Examples:\x02Available Commands:\x02Addit" +
 	"ional Commands:\x02Flags:\x02Global Flags:\x02Additional help topics:" +
-	"\x02Use\x02for more information about a command."
+	"\x02Use\x02for more information about a command.\x02version"
 
-var ja_JPIndex = []uint32{ // 49 elements
+var ja_JPIndex = []uint32{ // 50 elements
 	// Entry 0 - 1F
-	0x00000000, 0x0000002d, 0x00000109, 0x00000109,
-	0x00000109, 0x00000136, 0x00000167, 0x0000018f,
-	0x000001b1, 0x000001eb, 0x000001eb, 0x000001eb,
-	0x00000216, 0x0000023e, 0x00000325, 0x00000394,
-	0x000003c2, 0x000003ed, 0x0000041b, 0x000004ec,
-	0x0000059e, 0x00000614, 0x0000066c, 0x00000691,
-	0x000006c2, 0x000006e1, 0x00000730, 0x0000075e,
-	0x000007f2, 0x0000082a, 0x0000082a, 0x0000082a,
+	0x00000000, 0x0000002d, 0x00000109, 0x00000173,
+	0x000001a1, 0x000001ce, 0x000001ff, 0x00000227,
+	0x0000026a, 0x0000028c, 0x000002c6, 0x00000317,
+	0x00000342, 0x0000036a, 0x00000451, 0x000004c0,
+	0x000004ee, 0x00000519, 0x00000547, 0x00000618,
+	0x000006ca, 0x00000740, 0x00000798, 0x000007bd,
+	0x000007ee, 0x0000080d, 0x0000085c, 0x0000088a,
+	0x0000091e, 0x00000956, 0x000009b6, 0x000009ca,
 	// Entry 20 - 3F
-	0x0000082a, 0x0000082a, 0x0000082a, 0x0000088b,
-	0x000008ad, 0x00000974, 0x0000099a, 0x000009a8,
-	0x000009b9, 0x000009be, 0x000009db, 0x000009f5,
-	0x00000a03, 0x00000a20, 0x00000a43, 0x00000a6b,
-	0x00000a88,
-} // Size: 220 bytes
+	0x00000a04, 0x00000a14, 0x00000aa5, 0x00000b06,
+	0x00000b28, 0x00000bef, 0x00000c15, 0x00000c23,
+	0x00000c34, 0x00000c39, 0x00000c56, 0x00000c70,
+	0x00000c7e, 0x00000c9b, 0x00000cbe, 0x00000ce6,
+	0x00000d03, 0x00000d13,
+} // Size: 224 bytes
 
-const ja_JPData string = "" + // Size: 2696 bytes
+const ja_JPData string = "" + // Size: 3347 bytes
 	"\x02KintoのスクリプトとツールのCLI。\x02ktcliはKinto Technologiesの従業員のためのコマンドラインインターフ" +
-	"ェイスで\x0a当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。\x02%[1]sの使用方法についてのヘルプ" +
-	"\x02ログレベルをデバッグに設定する。\x02標準出力にログを出力する。\x02対話モードを無効にする\x02エラー以外のすべての出力を無効に" +
-	"する。\x02CLIのバージョンを表示します。\x02グローバル設定を行います。\x02ktcli のグローバル構成を設定します。対話型モー" +
-	"ドでは、CLI は設定する構成を選択するように要求します。\x0a非対話モードでは、サブコマンドを指定する必要があります。\x04\x00" +
-	"\x01\x0aj\x02setコマンドで非インタラクティブ・モードは使えない。サブコマンドが必要。\x02設定する構成を選択してください" +
-	"\x02%[1]s サブコマンドを実行します\x02CLIで使用する言語を設定します。\x02CLIに使用する言語を設定する。選択した言語でロー" +
-	"カル設定ファイルを更新します\x0a言語が指定されていない場合、CLIは言語を選択するように要求します。\x04\x00\x01\x0a" +
-	"\xac\x01\x02引数なしのset languageコマンドでは、非インタラクティブ・モードは使用できない。引数として言語を指定しなければ" +
-	"ならない。\x04\x00\x01\x0aq\x02set languageコマンドの引数が多すぎます。次の中から言語を選択してください: " +
-	"%[1]v。\x04\x00\x01\x0aS\x02無効な言語 %[1]s が指定されました。有効な言語です： %[2]v。\x02言語を選択" +
-	"してください。\x02使用する言語を選択してください。\x02%[1]s を選択しました。\x02設定ファイルへの言語の保存中にエラーが発生" +
-	"しました。\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLIの最新バージョンを確認し" +
-	"、必要に応じて更新します。\x02sudoでこのコマンドを実行してください。\x02更新するバイナリへのパス。デフォルトは現在のバイナリ・パ" +
-	"スです。\x02コマンドに関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%[1]s he" +
-	"lp [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:\x02エイリアス:" +
-	"\x02例:\x02利用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その他のヘルプトピック:" +
-	"\x02コマンドの詳細については、\x02 を使用して下さい。"
+	"ェイスで\x0a当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。\x02CLIの新しいバージョンが利用可能で" +
+	"す。最新版にアップデートしてください。\x02updateコマンドを使用してください\x02%[1]sの使用方法についてのヘルプ\x02ログ" +
+	"レベルをデバッグに設定する。\x02標準出力にログを出力する。\x02CLIの新しいバージョンのチェックを無効にする。\x02対話モードを無" +
+	"効にする\x02エラー以外のすべての出力を無効にする。\x02ログレベルを設定します。オプション: debug、info、warn、erro" +
+	"r\x02CLIのバージョンを表示します。\x02グローバル設定を行います。\x02ktcli のグローバル構成を設定します。対話型モードでは、" +
+	"CLI は設定する構成を選択するように要求します。\x0a非対話モードでは、サブコマンドを指定する必要があります。\x04\x00\x01" +
+	"\x0aj\x02setコマンドで非インタラクティブ・モードは使えない。サブコマンドが必要。\x02設定する構成を選択してください\x02%[1" +
+	"]s サブコマンドを実行します\x02CLIで使用する言語を設定します。\x02CLIに使用する言語を設定する。選択した言語でローカル設定ファイ" +
+	"ルを更新します\x0a言語が指定されていない場合、CLIは言語を選択するように要求します。\x04\x00\x01\x0a\xac\x01" +
+	"\x02引数なしのset languageコマンドでは、非インタラクティブ・モードは使用できない。引数として言語を指定しなければならない。" +
+	"\x04\x00\x01\x0aq\x02set languageコマンドの引数が多すぎます。次の中から言語を選択してください: %[1]v。" +
+	"\x04\x00\x01\x0aS\x02無効な言語 %[1]s が指定されました。有効な言語です： %[2]v。\x02言語を選択してください" +
+	"。\x02使用する言語を選択してください。\x02%[1]s を選択しました。\x02設定ファイルへの言語の保存中にエラーが発生しました。" +
+	"\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLIの最新バージョンを確認し、必要に応じて" +
+	"更新します。\x02sudoでこのコマンドを実行してください。\x02バイナリパスの取得に失敗しました、-pathフラグで指定してください。" +
+	"\x02バイナリパス:\x02シンボリックリンクの評価に失敗しました\x02リアルパス\x02バイナリパスはシンボリックリンクなので、--pat" +
+	"hフラグを使って実際のバイナリパスを指定してください。\x02更新するバイナリへのパス。デフォルトは現在のバイナリ・パスです。\x02コマンドに" +
+	"関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%[1]s help [コマンドへのパス]" +
+	"と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:\x02エイリアス:\x02例:\x02利" +
+	"用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その他のヘルプトピック:\x02コマンドの" +
+	"詳細については、\x02 を使用して下さい。\x02バージョン"
 
-	// Total table size 5501 bytes (5KiB); checksum: B989504E
+	// Total table size 6168 bytes (6KiB); checksum: 38A5A9F4
