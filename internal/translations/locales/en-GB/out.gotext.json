@@ -148,9 +148,9 @@
             "fuzzy": true
         },
         {
-            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "translation": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.",
+            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.",
+            "translation": "Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -173,7 +173,7 @@
                     "type": "[]string",
                     "underlyingType": "[]string",
                     "argNum": 1,
-                    "expr": "localizer.GetLangOptions()"
+                    "expr": "l.GetLangOptions()"
                 }
             ],
             "fuzzy": true
@@ -211,27 +211,27 @@
             "fuzzy": true
         },
         {
-            "id": "Select the language to use",
-            "message": "Select the language to use",
-            "translation": "Select the language to use",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "You selected: {Lang}",
-            "message": "You selected: {Lang}",
-            "translation": "You selected: {Lang}",
+            "id": "Updated the configuration and set the language to {Result}.",
+            "message": "Updated the configuration and set the language to {Result}.",
+            "translation": "Updated the configuration and set the language to {Result}.",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
-                    "id": "Lang",
+                    "id": "Result",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "lang"
+                    "expr": "result"
                 }
             ],
+            "fuzzy": true
+        },
+        {
+            "id": "Select the language to use",
+            "message": "Select the language to use",
+            "translation": "Select the language to use",
+            "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
@@ -439,6 +439,20 @@
             "id": "version",
             "message": "version",
             "translation": "version",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "english",
+            "message": "english",
+            "translation": "english",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "japanese",
+            "message": "japanese",
+            "translation": "japanese",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         }

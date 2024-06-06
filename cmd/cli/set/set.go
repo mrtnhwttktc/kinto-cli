@@ -12,7 +12,7 @@ import (
 )
 
 func NewSetCmd() *cobra.Command {
-	l := localizer.GetLocalizer()
+	l := localizer.NewLocalizer()
 	setCmd := &cobra.Command{
 		Use:   "set",
 		Short: l.Translate("Set global configurations."),

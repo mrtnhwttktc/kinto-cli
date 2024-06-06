@@ -9,10 +9,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// UpdateCmd represents the update command
-
 func NewUpdateCmd() *cobra.Command {
-	l := localizer.GetLocalizer()
+	l := localizer.NewLocalizer()
 	updateCmd := &cobra.Command{
 		Use:   "update",
 		Short: l.Translate("Update the CLI to the latest version."),

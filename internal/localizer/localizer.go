@@ -1,8 +1,8 @@
 package localizer
 
 import (
-	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	_ "github.com/mrtnhwttktc/kinto-cli/internal/translations"
+	"github.com/spf13/viper"
 
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
@@ -16,45 +16,25 @@ type Localizer struct {
 	Language string
 }
 
-var locales = []Localizer{
-	{
-		Language: "english",
-		printer:  message.NewPrinter(language.MustParse("en-GB")),
-	},
-	{
-		Language: "japanese",
-		printer:  message.NewPrinter(language.MustParse("ja-JP")),
-	},
-}
-
 // Lang exposes the initialized Localizer, defaulting to english if no language is set
-var localizer *Localizer
 
-// GetLocalizer returns the Localizer using the singleton pattern.
+// NewLocalizer returns the Localizer using the singleton pattern.
 // If the localizer is not set, it will set it to the language set in the configuration or default to english
-func GetLocalizer() *Localizer {
-	if localizer != nil {
-		return localizer
+func NewLocalizer() *Localizer {
+	configLang := viper.GetString("language")
+	switch configLang {
+	case "english":
+		return &Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
+	case "japanese":
+		return &Localizer{Language: "japanese", printer: message.NewPrinter(language.MustParse("ja-JP"))}
+	default:
+		return &Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
 	}
-	conf := config.GetConfig()
-	configLang := conf.GetString("language")
-	for _, locale := range locales {
-		if configLang == locale.Language {
-			localizer = &locale
-			return localizer
-		}
-	}
-	localizer = &Localizer{Language: "english", printer: message.NewPrinter(language.MustParse("en-GB"))}
-	return localizer
 }
 
-// GetLangOptions returns a list of the available languages in english
-func GetLangOptions() []string {
-	var langs []string
-	for _, locale := range locales {
-		langs = append(langs, locale.Language)
-	}
-	return langs
+// GetLangOptions returns a list of the available languages
+func (l *Localizer) GetLangOptions() []string {
+	return []string{l.Translate("english"), l.Translate("japanese")}
 }
 
 // Translate translates the string to the language set in the Localizer
