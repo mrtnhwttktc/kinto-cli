@@ -33,10 +33,10 @@ jobs:
           aws-region: us-west-2
 
       - name: Upload bin file to S3 latest
-        run: aws s3 cp ktcli ${{secrets.S3_URL}}/latest/ktcli
+        run: aws s3 cp ktcli ${{secrets.S3_URL}}/latest/ktcli　--metadata '{"version":"$VERSION"}' # Upload the binary to the S3 bucket with the latest version metadata
 
       - name: Upload bin file to S3 versioned
-        run: aws s3 cp ktcli ${{secrets.S3_URL}}/v$VERSION/ktcli
+        run: aws s3 cp ktcli ${{secrets.S3_URL}}/v$VERSION/ktcli　--metadata '{"version":"$VERSION"}' # Upload the binary to the S3 bucket with the latest version metadata
 
       - name: Refresh CloudFront Distribution
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" # Invalidate the CloudFront distribution to refresh the cache
