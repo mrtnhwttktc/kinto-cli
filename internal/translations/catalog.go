@@ -70,45 +70,47 @@ var messageKeyToIndex = map[string]int{
 	"Real path:":                         32,
 	"Running subcommand %s":              16,
 	"Select the configuration to set":    15,
-	"Select the language to use":         23,
+	"Select the language to use":         24,
 	"Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.": 13,
 	"Set global configurations.":           12,
 	"Set the language to use for the CLI.": 17,
-	"Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.": 18,
+	"Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.": 18,
 	"Sets the log level to debug.":                           5,
 	"Sets the log level. Options: debug, info, warn, error.": 10,
 	"Too many arguments provided for set language command. Please select a language from the following: %v\n": 20,
 	"Unknown help topic %#q":                37,
 	"Update the CLI to the latest version.": 26,
 	"Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.": 27,
+	"Updated the configuration and set the language to %s.":                                                                       23,
 	"Usage:":                                38,
 	"Use":                                   46,
 	"Use the update command to update":      3,
-	"You selected: %s":                      24,
+	"english":                               49,
 	"for more information about a command.": 47,
 	"help for %s":                           4,
+	"japanese":                              50,
 	"version":                               48,
 }
 
-var en_GBIndex = []uint32{ // 50 elements
+var en_GBIndex = []uint32{ // 52 elements
 	// Entry 0 - 1F
 	0x00000000, 0x00000021, 0x000000c5, 0x00000111,
 	0x00000132, 0x00000141, 0x0000015e, 0x00000175,
 	0x000001a6, 0x000001c1, 0x000001e4, 0x0000021b,
 	0x0000023a, 0x00000255, 0x00000340, 0x00000391,
-	0x000003b1, 0x000003ca, 0x000003ef, 0x00000498,
-	0x00000515, 0x00000583, 0x000005c0, 0x000005da,
-	0x000005f5, 0x00000609, 0x0000062a, 0x00000650,
-	0x000006cc, 0x000006ef, 0x00000733, 0x00000740,
+	0x000003b1, 0x000003ca, 0x000003ef, 0x00000499,
+	0x00000516, 0x00000584, 0x000005c1, 0x000005db,
+	0x00000614, 0x0000062f, 0x00000650, 0x00000676,
+	0x000006f2, 0x00000715, 0x00000759, 0x00000766,
 	// Entry 20 - 3F
-	0x0000075b, 0x00000766, 0x000007bd, 0x00000800,
-	0x00000817, 0x00000889, 0x000008a3, 0x000008aa,
-	0x000008b3, 0x000008bd, 0x000008d1, 0x000008e6,
-	0x000008ed, 0x000008fb, 0x00000913, 0x00000917,
-	0x0000093d, 0x00000945,
-} // Size: 224 bytes
+	0x00000781, 0x0000078c, 0x000007e3, 0x00000826,
+	0x0000083d, 0x000008af, 0x000008c9, 0x000008d0,
+	0x000008d9, 0x000008e3, 0x000008f7, 0x0000090c,
+	0x00000913, 0x00000921, 0x00000939, 0x0000093d,
+	0x00000963, 0x0000096b, 0x00000973, 0x0000097c,
+} // Size: 232 bytes
 
-const en_GBData string = "" + // Size: 2373 bytes
+const en_GBData string = "" + // Size: 2428 bytes
 	"\x02CLI for Kinto scripts and tools.\x02Kinto CLI or ktcli is a command " +
 	"line interface for employees at Kinto Technologies, allowing easy access" +
 	" to the multiple tools and scripts developped by our teams.\x02A new ver" +
@@ -125,28 +127,29 @@ const en_GBData string = "" + // Size: 2373 bytes
 	"et command. A subcommand is required.\x02Select the configuration to set" +
 	"\x02Running subcommand %[1]s\x02Set the language to use for the CLI.\x02" +
 	"Set the language to use for the CLI. Updates the local configuration fil" +
-	"e with the selected language. If no language is provided, the CLI will p" +
-	"rompt you to select one.\x04\x00\x01\x0ax\x02Cannot use non-interactive " +
-	"mode with set language command and no arguments. A language must be prov" +
-	"ided as an argument.\x04\x00\x01\x0ai\x02Too many arguments provided for" +
-	" set language command. Please select a language from the following: %[1]" +
-	"v\x04\x00\x01\x0a8\x02Invalid language %[1]s provided. Valid languages: " +
-	"%[2]v\x02Please select a language.\x02Select the language to use\x02You " +
-	"selected: %[1]s\x02Error saving language to config.\x02Update the CLI to" +
-	" the latest version.\x02Update the CLI to the latest version. This comma" +
-	"nd will check for the latest version of the CLI and update it if necessa" +
-	"ry.\x02Please run this command with sudo.\x02Failed to get binary path, " +
-	"please provide it using the --path flag.\x02Binary path:\x02Failed to ev" +
-	"aluate symlink\x02Real path:\x02Binary path is a symlink, please provide" +
-	" the actual binary path using the --path flag.\x02Path to the binary to " +
-	"update. Defaults to the current binary path.\x02Help about any command" +
-	"\x02Help provides help for any command in the application.\x0aSimply typ" +
-	"e %[1]s help [path to command] for full details.\x02Unknown help topic %" +
-	"#[1]q\x02Usage:\x02Aliases:\x02Examples:\x02Available Commands:\x02Addit" +
-	"ional Commands:\x02Flags:\x02Global Flags:\x02Additional help topics:" +
-	"\x02Use\x02for more information about a command.\x02version"
+	"e with the selected language. \x0aIf no language is provided, the CLI wi" +
+	"ll prompt you to select one.\x04\x00\x01\x0ax\x02Cannot use non-interact" +
+	"ive mode with set language command and no arguments. A language must be " +
+	"provided as an argument.\x04\x00\x01\x0ai\x02Too many arguments provided" +
+	" for set language command. Please select a language from the following: " +
+	"%[1]v\x04\x00\x01\x0a8\x02Invalid language %[1]s provided. Valid languag" +
+	"es: %[2]v\x02Please select a language.\x02Updated the configuration and " +
+	"set the language to %[1]s.\x02Select the language to use\x02Error saving" +
+	" language to config.\x02Update the CLI to the latest version.\x02Update " +
+	"the CLI to the latest version. This command will check for the latest ve" +
+	"rsion of the CLI and update it if necessary.\x02Please run this command " +
+	"with sudo.\x02Failed to get binary path, please provide it using the --p" +
+	"ath flag.\x02Binary path:\x02Failed to evaluate symlink\x02Real path:" +
+	"\x02Binary path is a symlink, please provide the actual binary path usin" +
+	"g the --path flag.\x02Path to the binary to update. Defaults to the curr" +
+	"ent binary path.\x02Help about any command\x02Help provides help for any" +
+	" command in the application.\x0aSimply type %[1]s help [path to command]" +
+	" for full details.\x02Unknown help topic %#[1]q\x02Usage:\x02Aliases:" +
+	"\x02Examples:\x02Available Commands:\x02Additional Commands:\x02Flags:" +
+	"\x02Global Flags:\x02Additional help topics:\x02Use\x02for more informat" +
+	"ion about a command.\x02version\x02english\x02japanese"
 
-var ja_JPIndex = []uint32{ // 50 elements
+var ja_JPIndex = []uint32{ // 52 elements
 	// Entry 0 - 1F
 	0x00000000, 0x0000002d, 0x00000109, 0x00000173,
 	0x000001a1, 0x000001ce, 0x000001ff, 0x00000227,
@@ -154,17 +157,17 @@ var ja_JPIndex = []uint32{ // 50 elements
 	0x00000342, 0x0000036a, 0x00000451, 0x000004c0,
 	0x000004ee, 0x00000519, 0x00000547, 0x00000618,
 	0x000006ca, 0x00000740, 0x00000798, 0x000007bd,
-	0x000007ee, 0x0000080d, 0x0000085c, 0x0000088a,
-	0x0000091e, 0x00000956, 0x000009b6, 0x000009ca,
+	0x00000814, 0x00000845, 0x00000894, 0x000008c2,
+	0x00000956, 0x0000098e, 0x000009ee, 0x00000a02,
 	// Entry 20 - 3F
-	0x00000a04, 0x00000a14, 0x00000aa5, 0x00000b06,
-	0x00000b28, 0x00000bef, 0x00000c15, 0x00000c23,
-	0x00000c34, 0x00000c39, 0x00000c56, 0x00000c70,
-	0x00000c7e, 0x00000c9b, 0x00000cbe, 0x00000ce6,
-	0x00000d03, 0x00000d13,
-} // Size: 224 bytes
+	0x00000a3c, 0x00000a4c, 0x00000add, 0x00000b3e,
+	0x00000b60, 0x00000c27, 0x00000c4d, 0x00000c5b,
+	0x00000c6c, 0x00000c71, 0x00000c8e, 0x00000ca8,
+	0x00000cb6, 0x00000cd3, 0x00000cf6, 0x00000d1e,
+	0x00000d3b, 0x00000d4b, 0x00000d52, 0x00000d5c,
+} // Size: 232 bytes
 
-const ja_JPData string = "" + // Size: 3347 bytes
+const ja_JPData string = "" + // Size: 3420 bytes
 	"\x02KintoのスクリプトとツールのCLI。\x02ktcliはKinto Technologiesの従業員のためのコマンドラインインターフ" +
 	"ェイスで\x0a当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。\x02CLIの新しいバージョンが利用可能で" +
 	"す。最新版にアップデートしてください。\x02updateコマンドを使用してください\x02%[1]sの使用方法についてのヘルプ\x02ログ" +
@@ -178,14 +181,14 @@ const ja_JPData string = "" + // Size: 3347 bytes
 	"\x02引数なしのset languageコマンドでは、非インタラクティブ・モードは使用できない。引数として言語を指定しなければならない。" +
 	"\x04\x00\x01\x0aq\x02set languageコマンドの引数が多すぎます。次の中から言語を選択してください: %[1]v。" +
 	"\x04\x00\x01\x0aS\x02無効な言語 %[1]s が指定されました。有効な言語です： %[2]v。\x02言語を選択してください" +
-	"。\x02使用する言語を選択してください。\x02%[1]s を選択しました。\x02設定ファイルへの言語の保存中にエラーが発生しました。" +
-	"\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLIの最新バージョンを確認し、必要に応じて" +
-	"更新します。\x02sudoでこのコマンドを実行してください。\x02バイナリパスの取得に失敗しました、-pathフラグで指定してください。" +
-	"\x02バイナリパス:\x02シンボリックリンクの評価に失敗しました\x02リアルパス\x02バイナリパスはシンボリックリンクなので、--pat" +
-	"hフラグを使って実際のバイナリパスを指定してください。\x02更新するバイナリへのパス。デフォルトは現在のバイナリ・パスです。\x02コマンドに" +
-	"関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%[1]s help [コマンドへのパス]" +
-	"と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:\x02エイリアス:\x02例:\x02利" +
-	"用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その他のヘルプトピック:\x02コマンドの" +
-	"詳細については、\x02 を使用して下さい。\x02バージョン"
+	"。\x02コンフィギュレーションを更新し、言語を%[1]sに設定しました。\x02使用する言語を選択してください。\x02設定ファイルへの言" +
+	"語の保存中にエラーが発生しました。\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLI" +
+	"の最新バージョンを確認し、必要に応じて更新します。\x02sudoでこのコマンドを実行してください。\x02バイナリパスの取得に失敗しました" +
+	"、-pathフラグで指定してください。\x02バイナリパス:\x02シンボリックリンクの評価に失敗しました\x02リアルパス\x02バイナリ" +
+	"パスはシンボリックリンクなので、--pathフラグを使って実際のバイナリパスを指定してください。\x02更新するバイナリへのパス。デフォルト" +
+	"は現在のバイナリ・パスです。\x02コマンドに関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。" +
+	"\x0a%[1]s help [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方" +
+	"法:\x02エイリアス:\x02例:\x02利用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:" +
+	"\x02その他のヘルプトピック:\x02コマンドの詳細については、\x02 を使用して下さい。\x02バージョン\x02英語\x02日本語"
 
-	// Total table size 6168 bytes (6KiB); checksum: 38A5A9F4
+	// Total table size 6312 bytes (6KiB); checksum: 35DE8988

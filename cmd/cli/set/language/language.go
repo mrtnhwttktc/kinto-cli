@@ -7,17 +7,18 @@ import (
 	"os"
 
 	"github.com/manifoldco/promptui"
+	"github.com/mrtnhwttktc/kinto-cli/cmd/utils"
 	"github.com/mrtnhwttktc/kinto-cli/internal/config"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
 	"github.com/spf13/cobra"
 )
 
 func NewLanguageCmd() *cobra.Command {
-	l := localizer.GetLocalizer()
+	l := localizer.NewLocalizer()
 	languageCmd := &cobra.Command{
 		Use:   "language [english|japanese]",
 		Short: l.Translate("Set the language to use for the CLI."),
-		Long:  l.Translate("Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one."),
+		Long:  l.Translate("Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one."),
 		Example: `
 	# interactive mode
 	ktcli set language
@@ -34,14 +35,14 @@ func NewLanguageCmd() *cobra.Command {
 				os.Exit(1)
 			}
 			if len(args) > 1 {
-				fmt.Fprintln(out, l.Translate("Too many arguments provided for set language command. Please select a language from the following: %v\n", localizer.GetLangOptions()))
+				fmt.Fprintln(out, l.Translate("Too many arguments provided for set language command. Please select a language from the following: %v\n", l.GetLangOptions()))
 				cmd.Help()
 				os.Exit(1)
 			}
 		},
 		Run: func(cmd *cobra.Command, args []string) {
 			out := cmd.OutOrStdout()
-			langs := localizer.GetLangOptions()
+			langs := l.GetLangOptions()
 			if len(args) == 1 {
 				for _, lang := range langs {
 					if lang == args[0] {
@@ -62,6 +63,7 @@ func NewLanguageCmd() *cobra.Command {
 				return
 			}
 			setLanguage(out, l, result)
+			fmt.Fprintln(out, l.Translate("Updated the configuration and set the language to %s.", result))
 		},
 	}
 	setFlags(languageCmd, l)
@@ -70,8 +72,9 @@ func NewLanguageCmd() *cobra.Command {
 
 func interactiveMode(l *localizer.Localizer, langs []string) (string, error) {
 	prompt := promptui.Select{
-		Label: l.Translate("Select the language to use"),
-		Items: langs,
+		Label:     l.Translate("Select the language to use"),
+		Items:     langs,
+		Templates: utils.CustomPromptuiStyle(),
 	}
 
 	_, result, err := prompt.Run()
@@ -83,9 +86,7 @@ func interactiveMode(l *localizer.Localizer, langs []string) (string, error) {
 }
 
 func setLanguage(out io.Writer, l *localizer.Localizer, lang string) {
-	conf := config.GetConfig()
-	fmt.Fprintln(out, l.Translate("You selected: %s", lang))
-	err := config.SaveToConfig(conf, "language", lang)
+	err := config.SaveToConfig("language", lang)
 	if err != nil {
 		fmt.Fprintln(out, l.Translate("Error saving language to config."))
 		os.Exit(1)

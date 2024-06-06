@@ -112,8 +112,8 @@
             "translation": "CLIで使用する言語を設定します。"
         },
         {
-            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
-            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. If no language is provided, the CLI will prompt you to select one.",
+            "id": "Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.",
+            "message": "Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.",
             "translation": "CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\n言語が指定されていない場合、CLIは言語を選択するように要求します。"
         },
         {
@@ -132,7 +132,7 @@
                     "type": "[]string",
                     "underlyingType": "[]string",
                     "argNum": 1,
-                    "expr": "localizer.GetLangOptions()"
+                    "expr": "l.GetLangOptions()"
                 }
             ]
         },
@@ -165,24 +165,24 @@
             "translation": "言語を選択してください。"
         },
         {
-            "id": "Select the language to use",
-            "message": "Select the language to use",
-            "translation": "使用する言語を選択してください。"
-        },
-        {
-            "id": "You selected: {Lang}",
-            "message": "You selected: {Lang}",
-            "translation": "{Lang} を選択しました。",
+            "id": "Updated the configuration and set the language to {Result}.",
+            "message": "Updated the configuration and set the language to {Result}.",
+            "translation": "コンフィギュレーションを更新し、言語を{Result}に設定しました。",
             "placeholders": [
                 {
-                    "id": "Lang",
+                    "id": "Result",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "lang"
+                    "expr": "result"
                 }
             ]
+        },
+        {
+            "id": "Select the language to use",
+            "message": "Select the language to use",
+            "translation": "使用する言語を選択してください。"
         },
         {
             "id": "Error saving language to config.",
@@ -343,6 +343,16 @@
             "id": "version",
             "message": "version",
             "translation": "バージョン"
+        },
+        {
+            "id": "english",
+            "message": "english",
+            "translation": "英語"
+        },
+        {
+            "id": "japanese",
+            "message": "japanese",
+            "translation": "日本語"
         }
     ]
 }

@@ -3,6 +3,7 @@ package utils
 import (
 	"strings"
 
+	"github.com/manifoldco/promptui"
 	"github.com/mrtnhwttktc/kinto-cli/internal/localizer"
 	"github.com/spf13/cobra"
 )
@@ -51,4 +52,14 @@ func LocalizeVersionTemplate(c *cobra.Command, l *localizer.Localizer) {
 		"version", l.Translate("version"),
 	).Replace(tpl)
 	c.SetVersionTemplate(tpl)
+}
+
+func CustomPromptuiStyle() *promptui.SelectTemplates {
+	return &promptui.SelectTemplates{
+		Label:    "{{ . }}?",
+		Active:   "\u23F5 {{ . | blue | bold }}",
+		Inactive: "  {{ . | white | faint }}",
+		Selected: "{{ \"\U00002714\" | green }} {{ . | green }}",
+		Details:  "",
+	}
 }
