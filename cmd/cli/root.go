@@ -86,6 +86,7 @@ func NewRootCmd() *cobra.Command {
 	// Localize the help function and usage template
 	utils.LocalizeHelpFunc(rootCmd, l)
 	utils.LocalizeUsageTemplate(rootCmd, l)
+	utils.LocalizeVersionTemplate(rootCmd, l)
 
 	return rootCmd
 }
