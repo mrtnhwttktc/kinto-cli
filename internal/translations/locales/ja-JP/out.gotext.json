@@ -14,12 +14,12 @@
         {
             "id": "A new version of the CLI is available. Please update to the latest version.",
             "message": "A new version of the CLI is available. Please update to the latest version.",
-            "translation": ""
+            "translation": "CLIの新しいバージョンが利用可能です。最新版にアップデートしてください。"
         },
         {
             "id": "Use the update command to update",
             "message": "Use the update command to update",
-            "translation": ""
+            "translation": "updateコマンドを使用してください"
         },
         {
             "id": "help for {Name}",
@@ -47,6 +47,11 @@
             "translation": "標準出力にログを出力する。"
         },
         {
+            "id": "Disables the check for a new version of the CLI.",
+            "message": "Disables the check for a new version of the CLI.",
+            "translation": "CLIの新しいバージョンのチェックを無効にする。"
+        },
+        {
             "id": "Disables interactive mode.",
             "message": "Disables interactive mode.",
             "translation": "対話モードを無効にする"
@@ -59,12 +64,7 @@
         {
             "id": "Sets the log level. Options: debug, info, warn, error.",
             "message": "Sets the log level. Options: debug, info, warn, error.",
-            "translation": ""
-        },
-        {
-            "id": "Disables the check for a new version of the CLI.",
-            "message": "Disables the check for a new version of the CLI.",
-            "translation": ""
+            "translation": "ログレベルを設定します。オプション: debug、info、warn、error"
         },
         {
             "id": "Prints the version of the CLI.",
@@ -207,12 +207,12 @@
         {
             "id": "Failed to get binary path, please provide it using the --path flag.",
             "message": "Failed to get binary path, please provide it using the --path flag.",
-            "translation": ""
+            "translation": "バイナリパスの取得に失敗しました、-pathフラグで指定してください。"
         },
         {
             "id": "Binary path:",
             "message": "Binary path:",
-            "translation": "",
+            "translation": "バイナリパス:",
             "placeholders": [
                 {
                     "id": "BinaryPath",
@@ -227,12 +227,12 @@
         {
             "id": "Failed to evaluate symlink",
             "message": "Failed to evaluate symlink",
-            "translation": ""
+            "translation": "シンボリックリンクの評価に失敗しました"
         },
         {
             "id": "Real path:",
             "message": "Real path:",
-            "translation": "",
+            "translation": "リアルパス",
             "placeholders": [
                 {
                     "id": "RealPath",
@@ -247,7 +247,7 @@
         {
             "id": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
             "message": "Binary path is a symlink, please provide the actual binary path using the --path flag.",
-            "translation": ""
+            "translation": "バイナリパスはシンボリックリンクなので、--pathフラグを使って実際のバイナリパスを指定してください。"
         },
         {
             "id": "Path to the binary to update. Defaults to the current binary path.",
@@ -338,6 +338,11 @@
             "id": "for more information about a command.",
             "message": "for more information about a command.",
             "translation": " を使用して下さい。"
+        },
+        {
+            "id": "version",
+            "message": "version",
+            "translation": "バージョン"
         }
     ]
 }

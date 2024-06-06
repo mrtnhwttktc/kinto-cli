@@ -61,6 +61,13 @@
             "fuzzy": true
         },
         {
+            "id": "Disables the check for a new version of the CLI.",
+            "message": "Disables the check for a new version of the CLI.",
+            "translation": "Disables the check for a new version of the CLI.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Disables interactive mode.",
             "message": "Disables interactive mode.",
             "translation": "Disables interactive mode.",
@@ -78,13 +85,6 @@
             "id": "Sets the log level. Options: debug, info, warn, error.",
             "message": "Sets the log level. Options: debug, info, warn, error.",
             "translation": "Sets the log level. Options: debug, info, warn, error.",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "Disables the check for a new version of the CLI.",
-            "message": "Disables the check for a new version of the CLI.",
-            "translation": "Disables the check for a new version of the CLI.",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -432,6 +432,13 @@
             "id": "for more information about a command.",
             "message": "for more information about a command.",
             "translation": "for more information about a command.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "version",
+            "message": "version",
+            "translation": "version",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         }
