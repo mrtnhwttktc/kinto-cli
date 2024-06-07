@@ -13,7 +13,6 @@ func main() {
 	logger.SetDefaultLogger()
 	// Load the configuration
 	config.InitializeConfig()
-
 	// Execute the root command to initialize the CLI
 	rootCmd := cli.NewRootCmd()
 	if err := rootCmd.Execute(); err != nil {

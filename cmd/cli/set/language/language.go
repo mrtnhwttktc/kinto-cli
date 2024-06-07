@@ -41,8 +41,11 @@ func NewLanguageCmd() *cobra.Command {
 			}
 		},
 		Run: func(cmd *cobra.Command, args []string) {
+			var selectedLang string
+
 			out := cmd.OutOrStdout()
 			langs := l.GetLangOptions()
+
 			if len(args) == 1 {
 				for _, lang := range langs {
 					if lang == args[0] {
@@ -58,12 +61,11 @@ func NewLanguageCmd() *cobra.Command {
 				fmt.Fprintln(out, l.Translate("Please select a language."))
 			}
 
-			result, err := interactiveMode(l, langs)
+			selectedLang, err := interactiveMode(l, langs)
 			if err != nil {
 				return
 			}
-			setLanguage(out, l, result)
-			fmt.Fprintln(out, l.Translate("Updated the configuration and set the language to %s.", result))
+			setLanguage(out, l, selectedLang)
 		},
 	}
 	setFlags(languageCmd, l)
@@ -91,6 +93,8 @@ func setLanguage(out io.Writer, l *localizer.Localizer, lang string) {
 		fmt.Fprintln(out, l.Translate("Error saving language to config."))
 		os.Exit(1)
 	}
+	fmt.Fprintln(out, l.Translate("Updated the configuration and set the language to %s.", lang))
+
 }
 
 func setFlags(cmd *cobra.Command, l *localizer.Localizer) {

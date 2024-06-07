@@ -16,10 +16,7 @@ type Localizer struct {
 	Language string
 }
 
-// Lang exposes the initialized Localizer, defaulting to english if no language is set
-
-// NewLocalizer returns the Localizer using the singleton pattern.
-// If the localizer is not set, it will set it to the language set in the configuration or default to english
+// NewLocalizer returns a Localizer. Get the language from viper, defaults to english
 func NewLocalizer() *Localizer {
 	configLang := viper.GetString("language")
 	switch configLang {
@@ -34,7 +31,7 @@ func NewLocalizer() *Localizer {
 
 // GetLangOptions returns a list of the available languages
 func (l *Localizer) GetLangOptions() []string {
-	return []string{l.Translate("english"), l.Translate("japanese")}
+	return []string{"english", "japanese"}
 }
 
 // Translate translates the string to the language set in the Localizer
