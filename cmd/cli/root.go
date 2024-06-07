@@ -28,13 +28,13 @@ func NewRootCmd() *cobra.Command {
 		PersistentPreRun: func(cmd *cobra.Command, args []string) {
 			// Bind the flags to the config, so that the config file and environment variables are used if the flag is not set
 			bindFlagsToEnvAndConfig(cmd)
-			// Set the log level
 			logger.SetLogLevel(viper.GetString("log-level"))
 
 			debug, _ := cmd.Flags().GetBool("debug")
 			verbose, _ := cmd.Flags().GetBool("verbose")
 			quiet, _ := cmd.Flags().GetBool("quiet")
 			no_version_check, _ := cmd.Flags().GetBool("no-version-check")
+
 			if !no_version_check {
 				if v.IsNewVersionAvailable() {
 					out := cmd.OutOrStdout()
@@ -81,7 +81,7 @@ func NewRootCmd() *cobra.Command {
 		NoBottomNewline: true,
 	})
 
-	// Localize the help function and usage template
+	// Localize the help function, usage template and version template
 	utils.LocalizeHelpFunc(rootCmd, l)
 	utils.LocalizeUsageTemplate(rootCmd, l)
 	utils.LocalizeVersionTemplate(rootCmd, l)
@@ -97,17 +97,19 @@ func setFlags(cmd *cobra.Command, l *localizer.Localizer) {
 	cmd.PersistentFlags().Bool("no-version-check", false, l.Translate("Disables the check for a new version of the CLI."))
 	cmd.PersistentFlags().BoolP("non-interactive", "n", false, l.Translate("Disables interactive mode."))
 	cmd.PersistentFlags().BoolP("quiet", "q", false, l.Translate("Disables all output except errors."))
-	cmd.PersistentFlags().StringP("log-level", "l", "info", l.Translate("Sets the log level. Options: debug, info, warn, error."))
+	cmd.PersistentFlags().String("log-level", "info", l.Translate("Sets the log level. Options: debug, info, warn, error."))
+
 	// local flags
 	cmd.Flags().BoolP("version", "v", false, l.Translate("Prints the version of the CLI."))
+
 	// hide the debug, verbose and no-version-check flags from the help output
-	cmd.PersistentFlags().MarkHidden("debug")            // TODO: is this a good idea?
-	cmd.PersistentFlags().MarkHidden("verbose")          // TODO: is this a good idea?
-	cmd.PersistentFlags().MarkHidden("no-version-check") // TODO: is this a good idea?
+	cmd.PersistentFlags().MarkHidden("debug")
+	cmd.PersistentFlags().MarkHidden("verbose")
+	cmd.PersistentFlags().MarkHidden("no-version-check")
 }
 
 // Bind each cobra flag to its associated viper configuration (config file and environment variable)
-// The order of precedence is flag > environment variable > config file > default value
+// The order of precedence is default value < config file < environment variable < flag
 func bindFlagsToEnvAndConfig(cmd *cobra.Command) {
 	cmd.Flags().VisitAll(func(f *pflag.Flag) {
 		configName := f.Name

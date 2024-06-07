@@ -182,7 +182,7 @@
         {
             "id": "Select the language to use",
             "message": "Select the language to use",
-            "translation": "使用する言語を選択してください。"
+            "translation": "使用する言語を選択してください"
         },
         {
             "id": "Error saving language to config.",
