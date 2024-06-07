@@ -9,9 +9,11 @@ import (
 	"github.com/spf13/viper"
 )
 
+var defaultLanguage = "english"
+
 // initDefault sets the default values for the config
 func initializeDefault() {
-	viper.SetDefault("language", "japanese")
+	viper.SetDefault("language", defaultLanguage)
 	viper.SetDefault("log-level", "info")
 }
 

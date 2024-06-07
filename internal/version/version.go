@@ -22,12 +22,12 @@ func IsNewVersionAvailable() bool {
 		slog.Warn("Error checking for new version. Received a non 200 response code.", slog.String("status", resp.Status))
 		return false
 	}
-	metadataVersin := resp.Header.Get("x-aws-version")
-	if metadataVersin == "" {
+	metadataVersion := resp.Header.Get("x-aws-version")
+	if metadataVersion == "" {
 		slog.Warn("Error checking for new version. No version header found.")
 		return false
 	}
-	if metadataVersin != Version && Version != "dev" {
+	if metadataVersion != Version && Version != "dev" {
 		return true
 	}
 	return false
