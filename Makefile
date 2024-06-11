@@ -6,3 +6,6 @@ begin_translations:
 
 complete_translations:
 	go generate ./internal/translations/translations.go
+
+build_dev:
+	go build -o ktcli_dev

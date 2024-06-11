@@ -40,77 +40,81 @@ func init() {
 
 var messageKeyToIndex = map[string]int{
 	"A new version of the CLI is available. Please update to the latest version.": 2,
-	"Additional Commands:":    42,
-	"Additional help topics:": 45,
-	"Aliases:":                39,
-	"Available Commands:":     41,
-	"Binary path is a symlink, please provide the actual binary path using the --path flag.": 33,
-	"Binary path:":                     30,
+	"Additional Commands:":    47,
+	"Additional help topics:": 50,
+	"Aliases:":                44,
+	"Available Commands:":     46,
+	"Binary path is a symlink, please provide the actual binary path using the --path flag.": 38,
+	"Binary path:":                     35,
 	"CLI for Kinto scripts and tools.": 0,
-	"Cannot use non-interactive mode with set command. A subcommand is required.\n":                                             14,
-	"Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.\n": 19,
+	"Cannot use non-interactive mode with set command. A subcommand is required.\n":                                             19,
+	"Cannot use non-interactive mode with set language command and no arguments. A language must be provided as an argument.\n": 24,
 	"Disables all output except errors.":                                  9,
 	"Disables interactive mode.":                                          8,
 	"Disables the check for a new version of the CLI.":                    7,
-	"Error saving language to config.":                                    25,
-	"Examples:":                                                           40,
-	"Failed to evaluate symlink":                                          31,
-	"Failed to get binary path, please provide it using the --path flag.": 29,
-	"Flags:":                 43,
-	"Global Flags:":          44,
-	"Help about any command": 35,
-	"Help provides help for any command in the application.\nSimply type %s help [path to command] for full details.":                                                     36,
-	"Invalid language %s provided. Valid languages: %v\n":                                                                                                                 21,
+	"Error saving language to config.":                                    29,
+	"Examples:":                                                           45,
+	"Failed to evaluate symlink":                                          36,
+	"Failed to get binary path, please provide it using the --path flag.": 34,
+	"Flags:":                 48,
+	"Global Flags:":          49,
+	"Help about any command": 40,
+	"Help provides help for any command in the application.\nSimply type %s help [path to command] for full details.":                                                     41,
+	"Invalid language %s provided. Valid languages: %v\n":                                                                                                                 26,
 	"Kinto CLI or ktcli is a command line interface for employees at Kinto Technologies, allowing easy access to the multiple tools and scripts developped by our teams.": 1,
-	"Path to the binary to update. Defaults to the current binary path.":                                                                                                  34,
-	"Please run this command with sudo.": 28,
-	"Please select a language.":          22,
+	"Path to the binary to update. Defaults to the current binary path.":                                                                                                  39,
+	"Please run this command with sudo.": 33,
+	"Please select a language.":          27,
 	"Prints logs to stdout.":             6,
 	"Prints the version of the CLI.":     11,
-	"Real path:":                         32,
-	"Running subcommand %s":              16,
-	"Select the configuration to set":    15,
-	"Select the language to use":         24,
-	"Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.": 13,
-	"Set global configurations.":           12,
-	"Set the language to use for the CLI.": 17,
-	"Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.": 18,
+	"Real path:":                         37,
+	"Running subcommand %s":              21,
+	"Select the configuration to set":    20,
+	"Select the language to use":         28,
+	"Set global configurations for ktcli. Updates the local configuration file with the selected option.\nIn interactive mode, the CLI will prompt you to select a configuration to set. In non-interactive mode, you must provide a subcommand.": 18,
+	"Set global configurations.":           17,
+	"Set the language to use for the CLI.": 22,
+	"Set the language to use for the CLI. Updates the local configuration file with the selected language. \nIf no language is provided, the CLI will prompt you to select one.": 23,
 	"Sets the log level to debug.":                           5,
 	"Sets the log level. Options: debug, info, warn, error.": 10,
-	"Too many arguments provided for set language command. Please select a language from the following: %v\n": 20,
-	"Unknown help topic %#q":                37,
-	"Update the CLI to the latest version.": 26,
-	"Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.": 27,
-	"Updated the configuration and set the language to %s.":                                                                       23,
-	"Usage:":                                38,
-	"Use":                                   46,
+	"Too many arguments provided for set language command. Please select a language from the following: %v\n": 25,
+	"Unknown help topic %#q":                42,
+	"Update the CLI to the latest version.": 31,
+	"Update the CLI to the latest version. This command will check for the latest version of the CLI and update it if necessary.": 32,
+	"Updated the configuration and set the language to %s.":                                                                       30,
+	"Usage:":                                43,
+	"Use":                                   51,
 	"Use the update command to update":      3,
-	"english":                               49,
-	"for more information about a command.": 47,
+	"down":                                  12,
+	"for more information about a command.": 52,
 	"help for %s":                           4,
-	"japanese":                              50,
-	"version":                               48,
+	"space":                                 14,
+	"submit":                                16,
+	"toggle":                                15,
+	"up":                                    13,
+	"version":                               53,
 }
 
-var en_GBIndex = []uint32{ // 52 elements
+var en_GBIndex = []uint32{ // 55 elements
 	// Entry 0 - 1F
 	0x00000000, 0x00000021, 0x000000c5, 0x00000111,
 	0x00000132, 0x00000141, 0x0000015e, 0x00000175,
 	0x000001a6, 0x000001c1, 0x000001e4, 0x0000021b,
-	0x0000023a, 0x00000255, 0x00000340, 0x00000391,
-	0x000003b1, 0x000003ca, 0x000003ef, 0x00000499,
-	0x00000516, 0x00000584, 0x000005c1, 0x000005db,
-	0x00000614, 0x0000062f, 0x00000650, 0x00000676,
-	0x000006f2, 0x00000715, 0x00000759, 0x00000766,
+	0x0000023a, 0x0000023f, 0x00000242, 0x00000248,
+	0x0000024f, 0x00000256, 0x00000271, 0x0000035c,
+	0x000003ad, 0x000003cd, 0x000003e6, 0x0000040b,
+	0x000004b5, 0x00000532, 0x000005a0, 0x000005dd,
+	0x000005f7, 0x00000612, 0x00000633, 0x0000066c,
 	// Entry 20 - 3F
-	0x00000781, 0x0000078c, 0x000007e3, 0x00000826,
-	0x0000083d, 0x000008af, 0x000008c9, 0x000008d0,
-	0x000008d9, 0x000008e3, 0x000008f7, 0x0000090c,
-	0x00000913, 0x00000921, 0x00000939, 0x0000093d,
-	0x00000963, 0x0000096b, 0x00000973, 0x0000097c,
-} // Size: 232 bytes
+	0x00000692, 0x0000070e, 0x00000731, 0x00000775,
+	0x00000782, 0x0000079d, 0x000007a8, 0x000007ff,
+	0x00000842, 0x00000859, 0x000008cb, 0x000008e5,
+	0x000008ec, 0x000008f5, 0x000008ff, 0x00000913,
+	0x00000928, 0x0000092f, 0x0000093d, 0x00000955,
+	0x00000959, 0x0000097f, 0x00000987,
+} // Size: 244 bytes
 
-const en_GBData string = "" + // Size: 2428 bytes
+const en_GBData string = "" + // Size: 2439 bytes
 	"\x02CLI for Kinto scripts and tools.\x02Kinto CLI or ktcli is a command " +
 	"line interface for employees at Kinto Technologies, allowing easy access" +
 	" to the multiple tools and scripts developped by our teams.\x02A new ver" +
@@ -119,76 +123,77 @@ const en_GBData string = "" + // Size: 2428 bytes
 	"o debug.\x02Prints logs to stdout.\x02Disables the check for a new versi" +
 	"on of the CLI.\x02Disables interactive mode.\x02Disables all output exce" +
 	"pt errors.\x02Sets the log level. Options: debug, info, warn, error.\x02" +
-	"Prints the version of the CLI.\x02Set global configurations.\x02Set glob" +
-	"al configurations for ktcli. Updates the local configuration file with t" +
-	"he selected option.\x0aIn interactive mode, the CLI will prompt you to s" +
-	"elect a configuration to set. In non-interactive mode, you must provide " +
-	"a subcommand.\x04\x00\x01\x0aL\x02Cannot use non-interactive mode with s" +
-	"et command. A subcommand is required.\x02Select the configuration to set" +
-	"\x02Running subcommand %[1]s\x02Set the language to use for the CLI.\x02" +
-	"Set the language to use for the CLI. Updates the local configuration fil" +
-	"e with the selected language. \x0aIf no language is provided, the CLI wi" +
-	"ll prompt you to select one.\x04\x00\x01\x0ax\x02Cannot use non-interact" +
-	"ive mode with set language command and no arguments. A language must be " +
-	"provided as an argument.\x04\x00\x01\x0ai\x02Too many arguments provided" +
-	" for set language command. Please select a language from the following: " +
-	"%[1]v\x04\x00\x01\x0a8\x02Invalid language %[1]s provided. Valid languag" +
-	"es: %[2]v\x02Please select a language.\x02Updated the configuration and " +
-	"set the language to %[1]s.\x02Select the language to use\x02Error saving" +
-	" language to config.\x02Update the CLI to the latest version.\x02Update " +
-	"the CLI to the latest version. This command will check for the latest ve" +
-	"rsion of the CLI and update it if necessary.\x02Please run this command " +
-	"with sudo.\x02Failed to get binary path, please provide it using the --p" +
-	"ath flag.\x02Binary path:\x02Failed to evaluate symlink\x02Real path:" +
-	"\x02Binary path is a symlink, please provide the actual binary path usin" +
-	"g the --path flag.\x02Path to the binary to update. Defaults to the curr" +
-	"ent binary path.\x02Help about any command\x02Help provides help for any" +
-	" command in the application.\x0aSimply type %[1]s help [path to command]" +
-	" for full details.\x02Unknown help topic %#[1]q\x02Usage:\x02Aliases:" +
-	"\x02Examples:\x02Available Commands:\x02Additional Commands:\x02Flags:" +
-	"\x02Global Flags:\x02Additional help topics:\x02Use\x02for more informat" +
-	"ion about a command.\x02version\x02english\x02japanese"
+	"Prints the version of the CLI.\x02down\x02up\x02space\x02toggle\x02submi" +
+	"t\x02Set global configurations.\x02Set global configurations for ktcli. " +
+	"Updates the local configuration file with the selected option.\x0aIn int" +
+	"eractive mode, the CLI will prompt you to select a configuration to set." +
+	" In non-interactive mode, you must provide a subcommand.\x04\x00\x01\x0a" +
+	"L\x02Cannot use non-interactive mode with set command. A subcommand is r" +
+	"equired.\x02Select the configuration to set\x02Running subcommand %[1]s" +
+	"\x02Set the language to use for the CLI.\x02Set the language to use for " +
+	"the CLI. Updates the local configuration file with the selected language" +
+	". \x0aIf no language is provided, the CLI will prompt you to select one." +
+	"\x04\x00\x01\x0ax\x02Cannot use non-interactive mode with set language c" +
+	"ommand and no arguments. A language must be provided as an argument.\x04" +
+	"\x00\x01\x0ai\x02Too many arguments provided for set language command. P" +
+	"lease select a language from the following: %[1]v\x04\x00\x01\x0a8\x02In" +
+	"valid language %[1]s provided. Valid languages: %[2]v\x02Please select a" +
+	" language.\x02Select the language to use\x02Error saving language to con" +
+	"fig.\x02Updated the configuration and set the language to %[1]s.\x02Upda" +
+	"te the CLI to the latest version.\x02Update the CLI to the latest versio" +
+	"n. This command will check for the latest version of the CLI and update " +
+	"it if necessary.\x02Please run this command with sudo.\x02Failed to get " +
+	"binary path, please provide it using the --path flag.\x02Binary path:" +
+	"\x02Failed to evaluate symlink\x02Real path:\x02Binary path is a symlink" +
+	", please provide the actual binary path using the --path flag.\x02Path t" +
+	"o the binary to update. Defaults to the current binary path.\x02Help abo" +
+	"ut any command\x02Help provides help for any command in the application." +
+	"\x0aSimply type %[1]s help [path to command] for full details.\x02Unknow" +
+	"n help topic %#[1]q\x02Usage:\x02Aliases:\x02Examples:\x02Available Comm" +
+	"ands:\x02Additional Commands:\x02Flags:\x02Global Flags:\x02Additional h" +
+	"elp topics:\x02Use\x02for more information about a command.\x02version"
 
-var ja_JPIndex = []uint32{ // 52 elements
+var ja_JPIndex = []uint32{ // 55 elements
 	// Entry 0 - 1F
 	0x00000000, 0x0000002d, 0x00000109, 0x00000173,
 	0x000001a1, 0x000001ce, 0x000001ff, 0x00000227,
 	0x0000026a, 0x0000028c, 0x000002c6, 0x00000317,
-	0x00000342, 0x0000036a, 0x00000451, 0x000004c0,
-	0x000004ee, 0x00000519, 0x00000547, 0x00000618,
-	0x000006ca, 0x00000740, 0x00000798, 0x000007bd,
-	0x00000814, 0x00000842, 0x00000891, 0x000008bf,
-	0x00000953, 0x0000098b, 0x000009eb, 0x000009ff,
+	0x00000342, 0x00000346, 0x0000034a, 0x00000357,
+	0x00000361, 0x0000036e, 0x00000396, 0x0000047d,
+	0x000004ec, 0x0000051a, 0x00000545, 0x00000573,
+	0x00000644, 0x000006f6, 0x0000076c, 0x000007c4,
+	0x000007e9, 0x00000817, 0x00000866, 0x00000866,
 	// Entry 20 - 3F
-	0x00000a39, 0x00000a49, 0x00000ada, 0x00000b3b,
-	0x00000b5d, 0x00000c24, 0x00000c4a, 0x00000c58,
-	0x00000c69, 0x00000c6e, 0x00000c8b, 0x00000ca5,
-	0x00000cb3, 0x00000cd0, 0x00000cf3, 0x00000d1b,
-	0x00000d38, 0x00000d48, 0x00000d4f, 0x00000d59,
-} // Size: 232 bytes
+	0x00000894, 0x00000928, 0x00000960, 0x000009c0,
+	0x000009d4, 0x00000a0e, 0x00000a1e, 0x00000aaf,
+	0x00000b10, 0x00000b32, 0x00000bf9, 0x00000c1f,
+	0x00000c2d, 0x00000c3e, 0x00000c43, 0x00000c60,
+	0x00000c7a, 0x00000c88, 0x00000ca5, 0x00000cc8,
+	0x00000cf0, 0x00000d0d, 0x00000d1d,
+} // Size: 244 bytes
 
-const ja_JPData string = "" + // Size: 3417 bytes
+const ja_JPData string = "" + // Size: 3357 bytes
 	"\x02KintoのスクリプトとツールのCLI。\x02ktcliはKinto Technologiesの従業員のためのコマンドラインインターフ" +
 	"ェイスで\x0a当社のチームによって開発された複数のツールやスクリプトに簡単にアクセスできます。\x02CLIの新しいバージョンが利用可能で" +
 	"す。最新版にアップデートしてください。\x02updateコマンドを使用してください\x02%[1]sの使用方法についてのヘルプ\x02ログ" +
 	"レベルをデバッグに設定する。\x02標準出力にログを出力する。\x02CLIの新しいバージョンのチェックを無効にする。\x02対話モードを無" +
 	"効にする\x02エラー以外のすべての出力を無効にする。\x02ログレベルを設定します。オプション: debug、info、warn、erro" +
-	"r\x02CLIのバージョンを表示します。\x02グローバル設定を行います。\x02ktcli のグローバル構成を設定します。対話型モードでは、" +
-	"CLI は設定する構成を選択するように要求します。\x0a非対話モードでは、サブコマンドを指定する必要があります。\x04\x00\x01" +
-	"\x0aj\x02setコマンドで非インタラクティブ・モードは使えない。サブコマンドが必要。\x02設定する構成を選択してください\x02%[1" +
-	"]s サブコマンドを実行します\x02CLIで使用する言語を設定します。\x02CLIに使用する言語を設定する。選択した言語でローカル設定ファイ" +
-	"ルを更新します\x0a言語が指定されていない場合、CLIは言語を選択するように要求します。\x04\x00\x01\x0a\xac\x01" +
-	"\x02引数なしのset languageコマンドでは、非インタラクティブ・モードは使用できない。引数として言語を指定しなければならない。" +
-	"\x04\x00\x01\x0aq\x02set languageコマンドの引数が多すぎます。次の中から言語を選択してください: %[1]v。" +
-	"\x04\x00\x01\x0aS\x02無効な言語 %[1]s が指定されました。有効な言語です： %[2]v。\x02言語を選択してください" +
-	"。\x02コンフィギュレーションを更新し、言語を%[1]sに設定しました。\x02使用する言語を選択してください\x02設定ファイルへの言語" +
-	"の保存中にエラーが発生しました。\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLIの" +
-	"最新バージョンを確認し、必要に応じて更新します。\x02sudoでこのコマンドを実行してください。\x02バイナリパスの取得に失敗しました、" +
-	"-pathフラグで指定してください。\x02バイナリパス:\x02シンボリックリンクの評価に失敗しました\x02リアルパス\x02バイナリパスは" +
-	"シンボリックリンクなので、--pathフラグを使って実際のバイナリパスを指定してください。\x02更新するバイナリへのパス。デフォルトは現在" +
-	"のバイナリ・パスです。\x02コマンドに関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%" +
-	"[1]s help [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:" +
-	"\x02エイリアス:\x02例:\x02利用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その" +
-	"他のヘルプトピック:\x02コマンドの詳細については、\x02 を使用して下さい。\x02バージョン\x02英語\x02日本語"
+	"r\x02CLIのバージョンを表示します。\x02下\x02上\x02スペース\x02トグル\x02提出する\x02グローバル設定を行います。" +
+	"\x02ktcli のグローバル構成を設定します。対話型モードでは、CLI は設定する構成を選択するように要求します。\x0a非対話モードでは、" +
+	"サブコマンドを指定する必要があります。\x04\x00\x01\x0aj\x02setコマンドで非インタラクティブ・モードは使えない。サブコ" +
+	"マンドが必要。\x02設定する構成を選択してください\x02%[1]s サブコマンドを実行します\x02CLIで使用する言語を設定します。" +
+	"\x02CLIに使用する言語を設定する。選択した言語でローカル設定ファイルを更新します\x0a言語が指定されていない場合、CLIは言語を選択する" +
+	"ように要求します。\x04\x00\x01\x0a\xac\x01\x02引数なしのset languageコマンドでは、非インタラクティブ" +
+	"・モードは使用できない。引数として言語を指定しなければならない。\x04\x00\x01\x0aq\x02set languageコマンドの" +
+	"引数が多すぎます。次の中から言語を選択してください: %[1]v。\x04\x00\x01\x0aS\x02無効な言語 %[1]s が指定さ" +
+	"れました。有効な言語です： %[2]v。\x02言語を選択してください。\x02使用する言語を選択してください\x02設定ファイルへの言語の" +
+	"保存中にエラーが発生しました。\x02CLIで使用する言語を設定します。\x02CLIを最新バージョンに更新します。このコマンドはCLIの最" +
+	"新バージョンを確認し、必要に応じて更新します。\x02sudoでこのコマンドを実行してください。\x02バイナリパスの取得に失敗しました、-" +
+	"pathフラグで指定してください。\x02バイナリパス:\x02シンボリックリンクの評価に失敗しました\x02リアルパス\x02バイナリパスはシ" +
+	"ンボリックリンクなので、--pathフラグを使って実際のバイナリパスを指定してください。\x02更新するバイナリへのパス。デフォルトは現在の" +
+	"バイナリ・パスです。\x02コマンドに関するヘルプ\x02ヘルプはアプリケーションのどのコマンドに対してもヘルプを表示しま す。\x0a%[" +
+	"1]s help [コマンドへのパス]と入力するだけで、詳細が表示されます。\x02不明なヘルプトピック %#[1]q\x02使用方法:\x02" +
+	"エイリアス:\x02例:\x02利用可能なコマンド:\x02その他のコマンド:\x02フラッグ:\x02グローバルフラッグ:\x02その他の" +
+	"ヘルプトピック:\x02コマンドの詳細については、\x02 を使用して下さい。\x02バージョン"
 
-	// Total table size 6309 bytes (6KiB); checksum: EC78193D
+	// Total table size 6284 bytes (6KiB); checksum: 96DA2C93
