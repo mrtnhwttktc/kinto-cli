@@ -96,6 +96,41 @@
             "fuzzy": true
         },
         {
+            "id": "down",
+            "message": "down",
+            "translation": "down",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "up",
+            "message": "up",
+            "translation": "up",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "space",
+            "message": "space",
+            "translation": "space",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "toggle",
+            "message": "toggle",
+            "translation": "toggle",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "submit",
+            "message": "submit",
+            "translation": "submit",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Set global configurations.",
             "message": "Set global configurations.",
             "translation": "Set global configurations.",
@@ -211,23 +246,6 @@
             "fuzzy": true
         },
         {
-            "id": "Updated the configuration and set the language to {Result}.",
-            "message": "Updated the configuration and set the language to {Result}.",
-            "translation": "Updated the configuration and set the language to {Result}.",
-            "translatorComment": "Copied from source.",
-            "placeholders": [
-                {
-                    "id": "Result",
-                    "string": "%[1]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 1,
-                    "expr": "result"
-                }
-            ],
-            "fuzzy": true
-        },
-        {
             "id": "Select the language to use",
             "message": "Select the language to use",
             "translation": "Select the language to use",
@@ -239,6 +257,23 @@
             "message": "Error saving language to config.",
             "translation": "Error saving language to config.",
             "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Updated the configuration and set the language to {Lang}.",
+            "message": "Updated the configuration and set the language to {Lang}.",
+            "translation": "Updated the configuration and set the language to {Lang}.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Lang",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "lang"
+                }
+            ],
             "fuzzy": true
         },
         {
@@ -439,20 +474,6 @@
             "id": "version",
             "message": "version",
             "translation": "version",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "english",
-            "message": "english",
-            "translation": "english",
-            "translatorComment": "Copied from source.",
-            "fuzzy": true
-        },
-        {
-            "id": "japanese",
-            "message": "japanese",
-            "translation": "japanese",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         }
